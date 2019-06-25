@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+		
+		<!-- Android Test xml   -->
+
+			
+<test name = "FC1555_Android" preserve-order="false">
+
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name =  "deviceName" 				value = "SM-N9208" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName" 				value = "admin.fccm@yopmail.com" />
+<parameter name = "password" 				value = "admin.fccm@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<groups>
+<run>
+
+ <include name = "fc1555" />
+<!--  <include name ="fc1555_analysis"/> -->
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+
+<!--  
+
+
+ <test name = "FC1555_iOS">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+<parameter name = "app" 	  	            value = "/Users/rtiwari/UAF/app/elektra.app" />
+<parameter name = "deviceName" 		  	value = "iPhone 6s" />
+<parameter name = "driverName" 		  	value = "iOS" />
+<parameter name = "environmentName" 	    value = "PreProduction" />
+<parameter name = "userName" 			value = "admin.fccm@yopmail.com" />
+<parameter name = "password" 			value = "admin.fccm@yopmail.com" />
+<parameter name = "isFeature"			value = "false" />
+<parameter name = "isSignInRequired" 	value = "true" />
+<parameter name = "isRealDevice" 		value = "true" />
+<parameter name = "deviceUdid"			value = "df64ddf4d778933595507ceb99a7a178d2cae08d" />
+<parameter name = "xcodeOrgId"			value = "4RP6VB27ZJ" />
+<parameter name = "xcodeSigningId"		value = "Fluke Electronics Corporation" />
+<parameter name = "appInstallFlag" 		value = "false" />
+<parameter name = "handleUpgradeAlert"	value = "false" />
+<parameter name = "isRealDevice"	 		value = "true" />
+
+<groups>
+<run>
+<include name="fc1555" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+-->		
+
+
+		<!---****Web application test -->
+		
+
+<!--
+	<test name = "FC1555 Web">
+	<parameter name = "driverName"       		value = "Web" />
+	<parameter name = "browserName"      		value = "Chrome" />
+	<parameter name = "url"             		value = "https://preprod.connect.fluke.com" />
+	<parameter name = "userName"       			value = "admin.fccm@yopmail.com" />
+	<parameter name = "password"        		value = "admin.fccm@yopmail.com" />
+	<parameter name = "environmentName" 		value = "PreProduction" />
+	<groups>
+		<run>
+		
+ <include name = "fc1555" />
+	<include name ="fc1555_analysis"/>	
+		</run>
+	</groups>
+	<packages>
+		<package name="com.fluke.connect.app.*" />
+	</packages>
+ </test>
+ 
+-->
+
+</suite>

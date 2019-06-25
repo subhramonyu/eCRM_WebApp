@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+
+<test name = "FCCM3550 Web Session Verification Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "at@yopmail.com" />
+<parameter name = "password"        			value = "at@yopmail.com" />
+
+<parameter name = "isActiveSession"			value = "true"  />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<parameter name = "testResultsReportName"	value = "FCCM3550_Web_Session_Verification_Tests_Results.html"  />
+
+<groups>
+<run>
+<include name = "3550_session_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+
+<test name = "FCCM3550 Completed Web Session Verification Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "at@yopmail.com" />
+<parameter name = "password"        			value = "at@yopmail.com" />
+
+<parameter name = "isActiveSession"			value = "false"  />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<parameter name = "testResultsReportName"	value = "FCCM3550_Web_Session_Verification_Tests_Results.html"  />
+
+<groups>
+<run>
+<include name = "3550_completed_session_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+
+
+</suite>

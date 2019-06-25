@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+ <test name = "Team Tests Web">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "isSignInRequired" 		        value = "false" />
+<parameter name = "isChangeEnvironmentRequired" 		value = "false" />
+
+<groups>
+<run>
+<include name = "team_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+ <test name = "Work order Web UAT Tests">
+
+<parameter name="driverName"       		value="Web" />
+<parameter name="browserName"      		value="Chrome" />
+<parameter name="url"             		value="https://preprod.connect.fluke.com/" />
+
+<groups>
+<run>
+<include name="work_order_web_tests" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+</test>  
+
+  <test name = "Asset Web">
+    <parameter name = "driverName"       		value = "Web" />
+	<parameter name = "browserName"      		value = "Chrome" />
+	<parameter name = "url"             		value = "https://preprod.connect.fluke.com" />
+	
+	<parameter name = "environmentName" 			value = "PreProduction" />
+	<groups>
+		<run>
+   			<include name="asset_uat" />
+		</run>
+	</groups>
+	<packages>
+		<package name="com.fluke.connect.app.*" />
+	</packages>
+</test>
+
+<!--  <test name = "Web CNX Regression Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<groups>
+<run>
+
+<include name="ti_tests_web" /> 
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> -->
+
+
+ <test name = "Web 3540 Regression Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "activeSessionStartTime3540"			value = "02/21/2019, 0:03:27"  />
+<parameter name = "completedSessionStartTime3540"			value = "10/16/2018, 23:51:40"  />
+
+
+<parameter name = "activeSessionStudyType" 				value = "ES3Phase" />
+<parameter name = "completedSessionStudyType" 			value = "ES3Phase" />
+
+
+<groups>
+<run>
+
+<include name = "3540_session_tests_web" />  
+<include name = "3540_completed_session_tests_web" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+
+<test name = "Web 3550 Regression Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<parameter name = "activeSessionStartTime3550"			value = "04/22/2019, 3:18:56"  />
+<parameter name = "completedSessionStartTime3550"			value = "02/15/2019, 1:01:06"  />
+
+<groups>
+<run>
+
+<include name = "3550_session_tests_web" />
+<include name = "3550_completed_session_tests_web" />
+
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<!--  <test name = "Web 3560 Regression Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<parameter name = "activeSessionStartTime3560"			value = "06/12/2019, 3:12:48" />
+<parameter name = "completedSessionStartTime3560"			value = "06/11/2019, 4:18:02"  />
+
+
+
+<parameter name = "toggleFeature3560"					value = "false"  />
+<parameter name = "activeSessionGatewayName3560"			value = "Fluke 3502 Gateway (C2AE5)"  />
+<parameter name = "completedSessionGatewayName3560"		value = "Fluke 3502 Gateway (C2AE5)"  />
+
+
+
+<groups>
+<run>
+
+<include name = "3560_session_tests_web" />
+
+<include name = "3560_completed_session_tests_web" />
+
+
+
+ </run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> -->
+
+ <test name = "Web Reports Regression Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+
+<parameter name = "useExistingData" 			value = "true" />
+
+<groups>
+<run>
+
+<include name = "report_tests_web" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+
+</suite>

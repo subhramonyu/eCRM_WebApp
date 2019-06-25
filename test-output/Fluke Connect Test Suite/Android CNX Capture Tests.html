@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>TestNG:  Android CNX Capture Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Android CNX Capture Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>60/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 22 23:03:24 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>812 seconds (812040 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>cnx_capture_android_tests </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3000DeviceNameTest()'><b>A3000DeviceNameTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3000MeasurementUnitTest()'><b>A3000MeasurementUnitTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3000MeasurementValueTest()'><b>A3000MeasurementValueTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3002DeviceNameTest()'><b>A3002DeviceNameTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3002MeasurementUnitTest()'><b>A3002MeasurementUnitTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.A3002MeasurementValueTest()'><b>A3002MeasurementValueTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.FC369DeviceNameTest()'><b>FC369DeviceNameTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.FC369MeasurementUnitTest()'><b>FC369MeasurementUnitTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.FC369MeasurementValueTest()'><b>FC369MeasurementValueTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.T3000DeviceNameTest()'><b>T3000DeviceNameTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.T3000MeasurementUnitTest()'><b>T3000MeasurementUnitTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.T3000MeasurementValueTest()'><b>T3000MeasurementValueTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.V3000DeviceNameTest()'><b>V3000DeviceNameTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.V3000MeasurementUnitTest()'><b>V3000MeasurementUnitTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.V3000MeasurementValueTest()'><b>V3000MeasurementValueTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.addTextNoteTo369FCMeasurementTest()'><b>addTextNoteTo369FCMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.addTextNoteToA3002MeasurementTest()'><b>addTextNoteToA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.addTextNoteToT3000MeasurementTest()'><b>addTextNoteToT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.addTextNoteToV3000MeasurementTest()'><b>addTextNoteToV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignAssetTo369FCMeasurementTest()'><b>assignAssetTo369FCMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>27</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignAssetToA3000MeasurementTest()'><b>assignAssetToA3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>28</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignAssetToA3002MeasurementTest()'><b>assignAssetToA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>22</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignAssetToT3000MeasurementTest()'><b>assignAssetToT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>28</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignAssetToV3000MeasurementTest()'><b>assignAssetToV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>22</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignWorkOrderTo369FCMeasurementTest()'><b>assignWorkOrderTo369FCMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>17</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignWorkOrderToA3000MeasurementTest()'><b>assignWorkOrderToA3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignWorkOrderToA3002MeasurementTest()'><b>assignWorkOrderToA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignWorkOrderToT3000MeasurementTest()'><b>assignWorkOrderToT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.assignWorkOrderToV3000MeasurementTest()'><b>assignWorkOrderToV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>5</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.capture369FCMeasurementTest()'><b>capture369FCMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>25</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.captureA3000MeasurementTest()'><b>captureA3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>25</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.captureA3002MeasurementTest()'><b>captureA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>25</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.captureManualMeasurementTest()'><b>captureManualMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.captureT3000MeasurementTest()'><b>captureT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>25</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.captureV3000MeasurementTest()'><b>captureV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>25</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.connectTo369FCTest()'><b>connectTo369FCTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>15</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.connectToA3000Test()'><b>connectToA3000Test</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.connectToA3002Test()'><b>connectToA3002Test</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.connectToT3000Test()'><b>connectToT3000Test</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>15</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.connectToV3000Test()'><b>connectToV3000Test</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>16</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.downloadA3000LogTest()'><b>downloadA3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>29</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.downloadA3002LogTest()'><b>downloadA3002LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>29</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.downloadFC369LogTest()'><b>downloadFC369LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>29</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.downloadT3000LogTest()'><b>downloadT3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>29</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.downloadV3000LogTest()'><b>downloadV3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>29</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.save369FCMeasurementTest()'><b>save369FCMeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.saveA3000MeasurementTest()'><b>saveA3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.saveA3002MeasurementTest()'><b>saveA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.saveT3000MeasurementTest()'><b>saveT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.saveV3000MeasurementTest()'><b>saveV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareA3000LogTest()'><b>shareA3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>18</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareA3000MeasurementTest()'><b>shareA3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareA3002LogTest()'><b>shareA3002LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>19</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareA3002MeasurementTest()'><b>shareA3002MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareFC369LogTest()'><b>shareFC369LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>19</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareFC369MeasurementTest()'><b>shareFC369MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>12</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareT3000LogTest()'><b>shareT3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>19</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareT3000MeasurementTest()'><b>shareT3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareV3000LogTest()'><b>shareV3000LogTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>19</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+<tr>
+<td title='com.connect.fluke.app.tests.CaptureMeasurementsTests.shareV3000MeasurementTest()'><b>shareV3000MeasurementTest</b><br>Test class: com.connect.fluke.app.tests.CaptureMeasurementsTests</td>
+<td></td>
+<td>14</td>
+<td>com.connect.fluke.app.tests.CaptureMeasurementsTests@61009542</td></tr>
+</table><p>
+</body>
+</html>

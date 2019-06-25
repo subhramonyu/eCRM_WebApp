@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Fluke Connect Test Suite]">
+  <listeners>
+    <listener class-name="com.connect.fluke.app.utils.TestResultsReport"/>
+  </listeners>
+  <test thread-count="5" name="FCCM3540 Web Session Verification Tests(failed)">
+    <parameter name="password" value="aat@yopmail.com"/>
+    <parameter name="testResultsReportName" value="FCCM3540_Web_Session_Verification_Tests_Results.html"/>
+    <parameter name="isActiveSession" value="true"/>
+    <parameter name="studyType" value="ES3Phase"/>
+    <parameter name="sessionStartTime" value="06/22/2018 14:25:06 |"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="driverName" value="Web"/>
+    <parameter name="userName" value="at@yopmail.com"/>
+    <parameter name="url" value="https://preprod.connect.fluke.com"/>
+    <groups>
+      <run>
+        <include name="3540_session_tests_web"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.connect.fluke.app.tests.SessionDetailPageTests3540">
+        <methods>
+          <include name="initClass"/>
+          <include name="tearDown"/>
+          <include name="measurementValueUnitPhaseTestForAllTabs" invocation-numbers="6 8 13 15"/>
+        </methods>
+      </class> <!-- com.connect.fluke.app.tests.SessionDetailPageTests3540 -->
+    </classes>
+  </test> <!-- FCCM3540 Web Session Verification Tests(failed) -->
+</suite> <!-- Failed suite [Fluke Connect Test Suite] -->

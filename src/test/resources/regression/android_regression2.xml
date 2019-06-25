@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "Regression Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "8.0" />
+
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/apk/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<parameter name = "isChangeEnvironmentRequired" 		value = "false" />
+<parameter name = "noResetFlag" 						value = "true" />
+
+<parameter name = "activeSessionStartTime3550"			value = "04/22/2019, 15:48:56"  />
+<parameter name = "completedSessionStartTime3550"			value = "02/15/2019, 13:31:06"  />
+
+<parameter name = "activeSessionStartTime3560"			value = "06/21/2019, 10:56:55"  />
+<parameter name = "completedSessionStartTime3560"			value = "03/12/2019, 16:48:02"  />
+
+<parameter name = "toggleFeature3560"					value = "false"  />
+<parameter name = "activeSessionGatewayName3560"			value = "Fluke 3502 Gateway (963E7)"  />
+<parameter name = "completedSessionGatewayName3560"		value = "Fluke 3502 Gateway (C2AE5)"  />
+
+
+<parameter name = "systemPort"				value = "8260" />
+
+<groups>
+<run>
+
+<include name = "3550_session_tests" />
+<include name = "3550_completed_session_tests" />
+
+
+<include name = "3560_session_tests" />
+<include name = "3560_completed_session_tests" />
+
+<include name = "report_tests" /> 
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+
+ <test name = "Android Tests" preserve-order="false">
+	<parameter name = "platformName" 				value = "Android" />
+	<parameter name = "platformVersion" 			value = "8.0" />
+	<parameter name = "app" 						value ="/Users/flukeqa/UAF/apk/elektra.apk" />
+	<parameter name = "appPackage" 					value = "com.fluke.deviceApp" />
+	<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+	<parameter name = "deviceName" 					value = "ANE-AL00" />
+	<parameter name = "driverName" 					value = "Android" />
+	<parameter name = "environmentName" 			value = "PreProduction" />
+	<parameter name = "userName" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "password" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "appInstallFlag"				value = "false"  />
+	<parameter name = "handleUpgradeAlert"			value = "false"  />
+	<parameter name ="systemPort"  value="8800" />
+	<groups>
+	<run>
+	<include name="android_asset_uat" />
+	</run>
+	</groups>
+	<packages>
+	<package name="com.fluke.connect.app.*" />
+	</packages>
+ </test>
+ 
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

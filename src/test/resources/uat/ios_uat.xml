@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "FCCM3550 iOS Session Verification Tests" preserve-order="false">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+
+
+<parameter name = "app" 	  	            value = "/Users/flukeqa/UAF/app/device/elektra.app" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+
+<parameter name = "deviceName" 		  	value = "iPhone" />
+<parameter name = "driverName" 		  	value = "iOS" />
+
+<parameter name = "environmentName" 	    value = "PreProduction" />
+
+<parameter name = "isRealDevice" 		value = "true" />
+
+<parameter name = "deviceUdid"			value = "2796895a3cdfc088ad3b88cbd9e9b6e7ca45912e" />
+
+<parameter name = "appInstallFlag"		value = "false"  />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+
+<parameter name = "activeSessionStartTime3540"			value = "12/24/2018, 18:22:11"  />
+<parameter name = "completedSessionStartTime3540"			value = "10/30/2018, 15:43:41"  />
+<parameter name = "activeSessionStudyType" 				value = "ES3Phase" />
+<parameter name = "completedSessionStudyType" 			value = "ES3Phase" />
+
+<parameter name = "activeSessionStartTime3550"			value = "02/15/2019, 13:31:06"  />
+<parameter name = "completedSessionStartTime3550"			value = "12/21/2018, 20:44:18"  />
+
+<parameter name = "activeSessionStartTime3560"			value = "02/18/2019, 17:07:29"  />
+<parameter name = "completedSessionStartTime3560"			value = "02/18/2019, 13:30:31"  />
+
+<parameter name = "toggleFeature3560"					value = "false"  />
+<parameter name = "activeSessionGatewayName3560"			value = "Fluke 3502 Gateway (C2AE5)"  />
+<parameter name = "completedSessionGatewayName3560"		value = "Fluke 3502 Gateway (C2AE5)"  />
+
+<parameter name = "wdaLocalPort"			value = "8140" />
+
+<groups>
+<run>
+
+<include name="cnx_capture_ios_tests" />
+<include name="ti_capture_ios_tests" />
+
+<include name = "team_tests" />  
+
+<include name = "3540_UAT_tests" />
+
+<include name = "3550_session_tests" />
+
+<include name = "3560_session_tests" />
+
+<include name = "report_uat" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

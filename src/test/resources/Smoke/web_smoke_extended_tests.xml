@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Web Dev Test Suite"> 
+
+  <test name = "Web Smoke Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://connect.dev.connect.fluke.com" />
+
+<parameter name = "completedSessionStartTime3550"		value = "11/20/2018, 0:30:16"  />
+<parameter name = "isSmokeSuite"						value = "true"  />
+
+<groups>
+<run>
+<include name = "web_smoke_cm_tests" />
+<include name = "3550_completed_session_tests_web" />
+<include name = "wo_web_smoke_ext_tests" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+
+<test name = "Asset Web">
+	<parameter name = "driverName"       		value = "Web" />
+	<parameter name = "browserName"      		value = "Chrome" />
+	<parameter name = "url"             		value = "https://connect.dev.connect.fluke.com" />
+ 	<parameter name = "userName"       			value = "desktop_uat@yopmail.com" />
+	<parameter name = "password"        		value = "desktop_uat@yopmail.com" />
+	<parameter name = "environmentName" 		value = "Dev" />
+	<parameter name = "isSmokeSuite"			value = "true"  />
+	
+	<groups>
+		<run>
+   		   <include name="web_smoke_ext_assets" />
+   		 </run>
+	</groups>
+	<packages>
+		<package name="com.fluke.connect.app.*" />
+	</packages>
+ </test>
+
+</suite>

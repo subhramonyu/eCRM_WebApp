@@ -1,0 +1,20 @@
+{
+  "hosts" : [ {
+    "title" : "m-bang-isharma1",
+    "threads" : [ {
+      "title" : "1627@m-bang-isharma1.main(1)",
+      "testCases" : [ {
+        "uid" : "cc6b480926e0df4a",
+        "name" : "resourceCenterVisualTest",
+        "title" : "Resource Center Visual Test",
+        "time" : {
+          "start" : 1493625892369,
+          "stop" : 1493625906710,
+          "duration" : 14341
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

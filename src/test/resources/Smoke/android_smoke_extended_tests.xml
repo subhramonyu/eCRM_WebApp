@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "Android Smoke Extended Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name =  "deviceName" 				value = "SM-G920I" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "Dev" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<parameter name = "completedSessionStartTime3540"			value = "02/07/2018, 16:57:27"  />
+<parameter name = "completedSessionStudyType" 			value = "ES3Phase" />
+
+<parameter name = "isSmokeSuite"					value = "true"  />
+
+<parameter name = "systemPort"				value = "8220" />
+
+<groups>
+<run>
+<include name = "android_smoke_extended_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+
+
+<!--  
+
+<test name = "Android Reports smoke ext Tests" preserve-order="false">
+
+<parameter name="platformName" 				value="Android" />
+<parameter name="platformVersion" 			value="7.0" />
+<parameter name="appPackage" 				value="com.fluke.deviceApp" />
+<parameter name="appActivity" 				value="com.fluke.deviceApp.LoginActivity" />
+<parameter name="deviceName" 				value="SM-N9208" />
+<parameter name="driverName" 				value="Android" />
+<parameter name="environmentName" 			value="Dev" />
+<parameter name="userName" 					value="android_automation_dev@yopmail.com" />
+<parameter name="password" 					value="android_automation_dev@yopmail.com" />
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<groups>
+<run>
+<include name="report_ext_smoke_tests" />
+</run>
+</groups>
+
+<packages>
+<package name = "com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+
+<test name = "Android Smoke Extended 3540 And Capture Manual Measurement Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name =  "deviceName" 				value = "SM-G920I" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "Dev" />
+<parameter name = "userName" 				value = "android_automation_dev@yopmail.com" />
+<parameter name = "password" 				value = "android_automation_dev@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<parameter name = "sessionStartTime"			value = "2/7/18, 16:57:27"  />
+<parameter name = "testResultsReportName" 	value = "Android_Extended_Tests_Results.html"  />
+<parameter name = "studyType"				value = "ES3Phase"  />
+
+
+<groups>
+<run>
+<include name = "android_smoke_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+<test name = "Work order Android smoke ext Tests" preserve-order="false">
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name = "deviceName" 		  		value = "SM-G920I" />
+<parameter name = "driverName" 		  		value = "Android" />
+<parameter name = "environmentName" 			value = "Dev" />
+<parameter name = "userName" 				value = "wo_automation@yopmail.com" />
+<parameter name = "password" 				value = "Wo_automation@yopmail.com" /> 
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<groups>
+<run>
+<include name="wo_smoke_extended_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<test name = "Asset Android smoke ext Tests" preserve-order="false">
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name = "deviceName" 		  		value = "SM-G920I" />
+<parameter name = "driverName" 		  		value = "Android" />
+<parameter name = "environmentName" 			value = "Dev" />
+<parameter name = "userName" 				value = "desktop_uat@yopmail.com" />
+<parameter name = "password" 				value = "desktop_uat@yopmail.com" /> 
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<groups>
+<run>
+<include name="asset_smoke_extended_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<test name = "FC 1555 Smoke Ext Test" preserve-order="false">
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name = "deviceName" 		  		value = "SM-G920I" />
+<parameter name = "driverName" 		  		value = "Android" />
+<parameter name = "environmentName" 			value = "Dev" />
+<parameter name = "userName" 				value = "devadmin.fccm@yopmail.com" />
+<parameter name = "password" 				value = "devadmin.fccm@yopmail.com" /> 
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<groups>
+<run>
+<include name="fc1555_ext_smoke_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>
+-->
+
+<!--  
+<test name = "Work order Android smoke ext Tests" preserve-order="false">
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name = "deviceName" 		  		value = "SM-N9208" />
+<parameter name = "driverName" 		  		value = "Android" />
+<parameter name = "environmentName" 			value = "Dev" />
+<parameter name = "userName" 				value = "wo_automation@yopmail.com" />
+<parameter name = "password" 				value = "Wo_automation@yopmail.com" /> 
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+
+<groups>
+<run>
+<include name="wo_smoke_extended_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+-->
+</suite>

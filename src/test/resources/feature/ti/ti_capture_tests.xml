@@ -1,0 +1,151 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite"> 
+
+<test name = "TI FCM Siginin Android Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "8.0" />
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name = "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName"       		value = "atti@yopmail.com" />
+<parameter name = "password"        		value = "atti@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "true"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<groups>
+<run>
+<include name = "signin" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<test name = "TI FCM Capture Android Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "8.0" />
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name = "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName"       		value = "atti@yopmail.com" />
+<parameter name = "password"        		value = "atti@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isSignInRequired" 		value = "false" />
+<parameter name = "noResetFlag" 				value = "true" />
+
+<parameter name = "testResultsReportName"	value = "TI_FCM_Capture_Android_Tests_Results.html"  />
+
+<groups>
+<run>
+<include name = "ti_capture_android_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+<test name = "iOS SignIn">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+<parameter name = "deviceName" 		  	value = "iPhone" />
+<parameter name = "driverName" 		  	value = "iOS" />
+
+<parameter name = "app" 	  	            value = "/Users/flukeqa/UAF/app/device/elektra.app" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+
+<parameter name = "environmentName" 	    value = "PreProduction" />
+<parameter name = "userName"       		value = "atti@yopmail.com" />
+<parameter name = "password"        		value = "atti@yopmail.com" />
+
+<parameter name = "isFeature"			value = "true" />
+<parameter name = "isRealDevice" 		value = "true" />
+
+
+<parameter name = "appInstallFlag"		value = "true"  />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+
+<parameter name = "deviceUdid"			value = "2796895a3cdfc088ad3b88cbd9e9b6e7ca45912e" />
+<parameter name = "xcodeOrgId"			value = "WT537N6297" />
+<parameter name = "xcodeSigningId"		value = "Fluke Electronics Corporation" />
+
+<groups>
+<run>
+<include name="signin" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<test name = "iOS TI FCM Capture Tests">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+<parameter name = "deviceName" 		  	value = "iPhone" />
+<parameter name = "driverName" 		  	value = "iOS" />
+
+<parameter name = "app" 	  	            value = "/Users/flukeqa/UAF/app/device/elektra.app" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+
+<parameter name = "environmentName" 	    value = "PreProduction" />
+<parameter name = "userName"       		value = "atti@yopmail.com" />
+<parameter name = "password"        		value = "atti@yopmail.com" />
+
+<parameter name = "isFeature"			value = "true" />
+<parameter name = "isRealDevice" 		value = "true" />
+
+
+<parameter name = "appInstallFlag"		value = "false"  />
+<parameter name = "isSignInRequired"		value = "false"  />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+
+<parameter name = "deviceUdid"			value = "2796895a3cdfc088ad3b88cbd9e9b6e7ca45912e" />
+<parameter name = "xcodeOrgId"			value = "WT537N6297" />
+<parameter name = "xcodeSigningId"		value = "Fluke Electronics Corporation" />
+
+<parameter name = "testResultsReportName"	value = "iOS_TI_FCM_Capture_Tests_Results.html"  />
+
+<groups>
+<run>
+<include name="ti_capture_ios_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

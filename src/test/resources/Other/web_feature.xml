@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "${test_name}">
+
+<parameter name = "driverName"       	value = "Web" />
+<parameter name = "browserName"      	value = "${browser_name}" />
+<parameter name = "url"             		value = "${url}" />
+<parameter name = "userName"       		value = "${user_name}" />
+<parameter name = "password"        		value = "${password}" />
+
+<groups>
+<run>
+<include name="${group_name}" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+</suite>

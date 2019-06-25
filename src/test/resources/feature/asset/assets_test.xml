@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <suite name = "Fluke Connect Test Suite">
+
+
+   <test name = "Asset iOS UAT Tests">
+
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+
+<parameter name = "app" 	  	        value = "/ele/sim/elektra.app" />
+
+
+<parameter name = "deviceName" 		  	value = "iPhone 7" />
+<parameter name = "driverName" 		  	value = "iOS" />
+
+
+
+<parameter name = "environmentName" 	    value = "PreProduction" />
+
+<parameter name = "userName" 			value = "desktop_uat@yopmail.com" />
+<parameter name = "password" 			value = "desktop_uat@yopmail.com" />
+
+
+<parameter name = "isFeature"			value = "true" />
+<parameter name = "isRealDevice" 		value = "false" />
+
+<parameter name = "appInstallFlag"      value = "true" />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+
+
+<groups>
+<run>
+<include name="android_asset_uat" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+   
+   
+
+
+    <!--  <test name = "Android Tests" preserve-order="false">
+	<parameter name = "platformName" 				value = "Android" />
+	<parameter name = "platformVersion" 			value = "8.0.0" />
+	<parameter name = "app" 						value ="/ele/sim/elektra.apk" />
+	<parameter name = "appPackage" 					value = "com.fluke.deviceApp" />
+	<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+	<parameter name = "deviceName" 					value = "ANE-Al00" />
+	<parameter name = "driverName" 					value = "Android" />
+	<parameter name = "environmentName" 			value = "PreProduction" />
+	<parameter name = "userName" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "password" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "appInstallFlag"				value = "false"  />
+	<parameter name = "handleUpgradeAlert"			value = "false"  />
+	
+	<groups>
+	<run>
+  
+	<include name="analysis" />
+	</run>
+	</groups>
+	<packages>
+	<package name="com.fluke.connect.app.*" />
+	</packages>
+ </test>-->
+
+   <!-- <test name = "Asset Web">
+
+	<parameter name = "driverName"       		value = "Web" />
+	<parameter name = "browserName"      		value = "Chrome" />
+	<parameter name = "url"             		value = "https://preprod.connect.fluke.com" />
+	<parameter name = "userName"       			value = "desktop_uat@yopmail.com" />
+	<parameter name = "password"        		value = "desktop_uat@yopmail.com" />
+	<parameter name = "environmentName" 		value = "PreProduction" />
+	<groups>
+		<run>
+   		   <include name="asset_uat" />
+        <include name="analysis" /> 
+		</run>
+	</groups>
+	<packages>
+		<package name="com.fluke.connect.app.*" />
+	</packages>
+<<<<<<< Updated upstream
+ </test> -->
+
+</suite>

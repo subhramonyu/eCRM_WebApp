@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+
+<test name = "Work order Web Tests">
+
+<parameter name="driverName"       		value="Web" />
+<parameter name="browserName"      		value="Chrome" />
+<parameter name="url"             		value="https://preprod.connect.fluke.com/" />
+<parameter name="userName"       		value="wo_automation@yopmail.com" />
+<parameter name="password"        		value="wo_automation@yopmail.com" />
+
+<groups>
+<run>
+<include name="work_order_web_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+</test>
+
+ </suite>

@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "FCCM3561 Web Session Verification Tests Chrome">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName" 				value = "Bvpreprodblr1@yopmail.com" />
+<parameter name = "password" 				value = "Bvpreprodblr1@yopmail.com" />
+
+<parameter name = "toggleFeature"			value = "true"  />
+
+<parameter name = "isActiveSession"			value = "true"  />
+<parameter name = "sessionStartTime"			value = "12/07/2018, 16:28:24"  />
+<parameter name = "gatewayName"				value = "Fluke 3502 Gateway (85EA0)"  />
+
+<groups>
+<run>
+<include name = "uat_web_tests_3560" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

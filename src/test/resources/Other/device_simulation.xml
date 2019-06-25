@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite"> 
+
+<test name = "TI FCM Siginin Android Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "8.0." />
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name = "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName" 				value = "Tiweb@yopmail.com" />
+<parameter name = "password" 				value = "Tiweb@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<groups>
+<run>
+<include name = "signin" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

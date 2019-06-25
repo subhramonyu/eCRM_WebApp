@@ -1,0 +1,61 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite">
+ 
+
+
+  <test name = "FCCM3540 Web Session Verification Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+<parameter name = "url"             		value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "3540automation@yopmail.com" />
+<parameter name = "password"        		value = "3540automation@yopmail.com" />
+<parameter name = "isActiveSession"			value = "true"  />
+<parameter name = "sessionStartTime"		value = "12/24/2018 18:22:11 |"  />
+<parameter name = "studyType"				value = "ES3Phase"  />
+
+<groups>
+<run>
+<include name = "3540_session_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+<test name = "FCCM3540 Web Completed Session Verification Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "3540automation@yopmail.com" />
+<parameter name = "password"        			value = "3540automation@yopmail.com" />
+
+<parameter name = "isActiveSession"			value = "false"  />
+<parameter name = "sessionStartTime"			value = "10/17/2018 12:21:40 |"  />
+<parameter name = "studyType"				value = "ES3Phase"  />
+
+<groups>
+<run>
+<include name = "3540_completed_session_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+
+</suite>

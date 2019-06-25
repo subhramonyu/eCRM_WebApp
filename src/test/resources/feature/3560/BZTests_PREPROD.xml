@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "BZ Tests PreProd" >
+
+<parameter name="platformName" 	value="WebServices" />
+
+<parameter name="baseURI" 		value="https://bztest.bluzone.io" />
+<parameter name="beaconID" 		value="12042836031844713607" />
+<parameter name="BZID" 			value="ZHhOACQVyydmPuVkR46knApdSZ8HTHCBSE7iEJdBP7wLDD3zM7" />
+<parameter name="projectID" 		value="155" />
+
+<parameter name="tempValue" 		value="34.0" />
+
+<groups>
+<run>
+<include name="bz_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+</test>
+
+</suite>

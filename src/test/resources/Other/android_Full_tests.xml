@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "Android Full Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "appPackage" 				value="com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value="com.fluke.deviceApp.LoginActivity" />
+<parameter name = "deviceName" 				value="SM-G920I" />
+<parameter name = "driverName" 				value="Android" />
+<parameter name = "environmentName" 			value = "PreProduction" />
+<parameter name = "userName" 				value = "android_fullsuite@yopmail.com" />
+<parameter name = "password" 				value = "android_fullsuite@yopmail.com" />
+<parameter name="deviceUdid" 				value="1215fc6d0a652104" />
+
+<listeners>
+<listener class-name="com.connect.fluke.mobile.utils.TestListener" />
+</listeners>
+
+<groups>
+<run>
+<include name = "android_full_tests" />
+</run>
+</groups>
+
+<packages>
+<package name = "com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+</suite>

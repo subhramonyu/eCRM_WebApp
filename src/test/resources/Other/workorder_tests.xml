@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+
+<test name = "Work order iOS Tests">
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.4" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+<parameter name = "app" 	  	        value = "/Users/flukeqa/UAF/app/elektra.app" />
+<parameter name = "deviceName" 		  	value = "iPhone 7" />
+<parameter name = "driverName" 		  	value = "iOS" />
+<parameter name = "environmentName" 	value = "PreProduction" />
+<parameter name = "userName" 			value = "wo_automation@yopmail.com" />
+<parameter name = "password" 			value = "wo_automation@yopmail.com" /> 
+<parameter name = "isFeature"			value = "true" />
+<parameter name = "isRealDevice" 		value = "false" />
+<parameter name = "handleUpgradeAlert"  value = " true"  />
+<parameter name = "appInstallFlag"      value = "true" />
+<parameter name = "isSignInRequired" 	value = "true" />
+
+<groups>
+<run>
+<include name="work_order_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+ 
+<test name = "Work order Android Tests" preserve-order="false">
+ 
+<parameter name="platformName" 				value="Android" />
+<parameter name="platformVersion" 			value="8.0" />
+<parameter name="appPackage" 				value="com.fluke.deviceApp" />
+<parameter name="appActivity" 				value="com.fluke.deviceApp.LoginActivity" />
+<parameter name="deviceName" 				value="ANE-AL00" />
+<parameter name="driverName" 				value="Android" />
+<parameter name="environmentName" 			value="PreProduction" />
+<parameter name="userName" 					value="wo_automation@yopmail.com" />
+<parameter name="password" 					value="wo_automation@yopmail.com" />
+<parameter name="isRealDevice" 				value="true" />
+<parameter name="appInstallFlag" 			value="false" />
+<parameter name="handleUpgradeAlert" 		value="true" />
+
+<groups>
+<run>
+<include name="work_order_tests" />
+</run>
+</groups>
+
+<packages>
+<package name = "com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+</suite>

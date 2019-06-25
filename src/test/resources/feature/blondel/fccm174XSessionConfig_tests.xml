@@ -1,0 +1,105 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite">
+ 
+<!-- 
+<test name = "FCCM3540 Web Session Verification Tests">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "android_fullsuite@yopmail.com" />
+<parameter name = "password"        			value = "android_fullsuite@yopmail.com" />
+<parameter name = "isActiveSession"			value = "true"  />
+<parameter name = "sessionStartTime"			value = "07/16/2018 20:31:25 |"  />
+<parameter name = "testResultsReportName"	value = "FCCM3540_Web_Session_Verification_Tests_Results.html"  />
+<parameter name = "studyType"				value = "ES3Phase2Element"  />
+
+<groups>
+<run>
+<include name = "3540_session_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+ -->  
+
+<test name = "174X Android Setup Config Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/isharma1/UAF/apk/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name =  "deviceName" 				value = "SM-G920I" />
+<parameter name = "driverName" 				value = "Android" />
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName" 				value = "automationblondel@yopmail.com" />
+<parameter name = "password" 				value = "Fluke1234!" />
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+<parameter name = "isActiveSession"			value = "false"  />
+<parameter name = "sessionStartTime"			value = "8/13/18 15:40:07 |"  />
+<parameter name = "studyType"				value = "ES3Phase"  />
+<parameter name = "pqTool"					value = "FLUKE1748"/>
+<parameter name = "ssid174X"				value = "17041901"  />
+<parameter name = "flukeWIFI"				value = "FC-Net"/>
+
+
+<groups>
+<run>
+<include name = "174X_Session_Config_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+<!-- 
+
+<test name = "174X iOS Setup Config Tests" preserve-order="false">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.2" />
+<parameter name = "app" 	  	        value = "/Users/naveen/UAF/app/elektra.app" />
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+<parameter name = "deviceName" 		  	value = "iPhone 6s" />
+<parameter name = "driverName" 		  	value = "iOS" />
+<parameter name = "environmentName" 	value = "PreProduction" />
+<parameter name = "userName" 			value = "automationblondel@yopmail.com" />
+<parameter name = "password" 			value = "Fluke1234!" />
+<parameter name = "isRealDevice" 		value = "true" />
+<parameter name = "isSignInRequired" 	value = "true" />
+<parameter name = "deviceUdid"			value = "8c37a1a7b0676c222cf18d4934fa6e833a028822" />
+<parameter name = "xcodeOrgId"			value = "WT537N6297" />
+<parameter name = "xcodeSigningId"		value = "Fluke Electronics Corporation" />
+<parameter name = "appInstallFlag"		value = "false"  />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+<parameter name = "isActiveSession"		value = "true"  />
+<parameter name = "sessionStartTime"		value = "07/17/2018, 00:46:29"  />
+<parameter name = "pqTool"			    value = "FLUKE1748"/>
+<parameter name = "ssid174X"		    value = "17041901"  />
+<parameter name = "flukeWIFI"			value = "FC-Net"/>
+
+<groups>
+<run>
+<include name = "174X_Session_Config_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+ -->
+ 
+</suite>

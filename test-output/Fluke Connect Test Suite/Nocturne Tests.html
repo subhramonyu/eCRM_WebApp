@@ -1,0 +1,354 @@
+<html>
+<head>
+<title>TestNG:  Nocturne Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Nocturne Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>55/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Feb 23 17:01:43 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>216 seconds (216281 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>3560_session_tests </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.assetCountTextVisibleTest()'><b>assetCountTextVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.assetGroupNameTest()'><b>assetGroupNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.assetNameTest()'><b>assetNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.gateWayNameTest()'><b>gateWayNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.gateWayNameTest()'><b>gateWayNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.graphDisplayedTest()'><b>graphDisplayedTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.machineLearningMessageTest()'><b>machineLearningMessageTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.maxLabelIn1HTabTest()'><b>maxLabelIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>12</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn1H8HTabTest()'><b>measurementValueIsNotStaleIn1H8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn1HTabTest()'><b>measurementValueIsNotStaleIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn1W3WTabTest()'><b>measurementValueIsNotStaleIn1W3WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn1W8HTabTest()'><b>measurementValueIsNotStaleIn1W8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn3W1WTabTest()'><b>measurementValueIsNotStaleIn3W1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn8H1HTabTest()'><b>measurementValueIsNotStaleIn8H1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueIsNotStaleIn8H1WTabTest()'><b>measurementValueIsNotStaleIn8H1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn1H8HTabTest()'><b>measurementValueTimestampIsNotEmptyIn1H8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn1HTabTest()'><b>measurementValueTimestampIsNotEmptyIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn1W3WTabTest()'><b>measurementValueTimestampIsNotEmptyIn1W3WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn1W8HTabTest()'><b>measurementValueTimestampIsNotEmptyIn1W8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn3W1WTabTest()'><b>measurementValueTimestampIsNotEmptyIn3W1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn8H1HTabTest()'><b>measurementValueTimestampIsNotEmptyIn8H1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.measurementValueTimestampIsNotEmptyIn8H1WTabTest()'><b>measurementValueTimestampIsNotEmptyIn8H1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.minLabelIn1HTabTest()'><b>minLabelIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sensorCountAndTypeTest()'><b>sensorCountAndTypeTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.sensorCountAndTypeTest()'><b>sensorCountAndTypeTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sensorsStaticTextVisibleTest()'><b>sensorsStaticTextVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.sensorsStaticTextVisibleTest()'><b>sensorsStaticTextVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sessionStartTimeTest()'><b>sessionStartTimeTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.sessionStartTimeTest()'><b>sessionStartTimeTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sessionStartUserNameTest()'><b>sessionStartUserNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.sessionStartUserNameTest()'><b>sessionStartUserNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sessionTileStatusTest()'><b>sessionTileStatusTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.sessionTileStatusTest()'><b>sessionTileStatusTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.sessionTileVisibleTest()'><b>sessionTileVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.startTimeStaticTextVisibleTest()'><b>startTimeStaticTextVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.startTimeStaticTextVisibleTest()'><b>startTimeStaticTextVisibleTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo1H8HTabTest()'><b>switchTo1H8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo1W3WTabTest()'><b>switchTo1W3WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo1W8HTabTest()'><b>switchTo1W8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>10</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo3W1WTabTest()'><b>switchTo3W1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo8H1HTabTest()'><b>switchTo8H1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.switchTo8H1WTabTest()'><b>switchTo8H1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>11</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests.tapOnSessionTileTest()'><b>tapOnSessionTileTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests</td>
+<td></td>
+<td>1</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560ActiveMonitoringSessionTests@3b94d659</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.testPointNameTest()'><b>testPointNameTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn1H8HTabTest()'><b>unitInMeasurementValueIn1H8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn1HTabTest()'><b>unitInMeasurementValueIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn1W3WTabTest()'><b>unitInMeasurementValueIn1W3WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn1W8HTabTest()'><b>unitInMeasurementValueIn1W8HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn3W1WTabTest()'><b>unitInMeasurementValueIn3W1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn8H1HTabTest()'><b>unitInMeasurementValueIn8H1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.unitInMeasurementValueIn8H1WTabTest()'><b>unitInMeasurementValueIn8H1WTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.vibrationUnitTest()'><b>vibrationUnitTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.xAxisLabelIn1HTabTest()'><b>xAxisLabelIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>5</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.yAxisLabelIn1HTabTest()'><b>yAxisLabelIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+<tr>
+<td title='com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests.zAxisLabelIn1HTabTest()'><b>zAxisLabelIn1HTabTest</b><br>Test class: com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.connect.fluke.mobile.tests.FCCM3560SessionDetailPageTests@24b1d79b</td></tr>
+</table><p>
+</body>
+</html>

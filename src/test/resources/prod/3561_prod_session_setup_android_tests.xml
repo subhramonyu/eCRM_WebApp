@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "FCCM3561 Android Session Setup Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "deviceName" 				value = "SM-G920I" />
+<parameter name = "driverName" 				value = "Android" />
+
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/apk/elektra.apk" />
+<parameter name = "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+
+
+
+<parameter name = "environmentName" 			value = "Production" />
+<parameter name = "userName" 				value = "3561prod1@yopmail.com" />
+<parameter name = "password" 				value = "3561prod1@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "true"  />
+<parameter name = "handleUpgradeAlert"		value = "true"  />
+
+<parameter name = "gatewayName"				value = "Fluke 3502 Gateway (FEDCE)"  />
+<parameter name = "networkName"				value = "FC-Net"  />
+<parameter name = "sensorName"				value = "10487"  />
+
+<parameter name = "testResultsReportName"	value = "FCCM3561_Session_Setup_Test_Results.html"  />
+
+
+<groups>
+<run>
+<include name = "3560_session_setup_tests" />
+</run>
+</groups>
+<packages>
+<package name = "com.connect.fluke.app.*" />
+</packages>
+
+</test>
+
+<listeners>
+<listener class-name="com.connect.fluke.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

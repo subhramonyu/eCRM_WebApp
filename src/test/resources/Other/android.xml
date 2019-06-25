@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "Fluke Connect Test Suite">
+
+<test name = "FC1555" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "7.0" />
+<parameter name = "app" 	  	            		value = "/Users/rtiwari/UAF/apk/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+<parameter name =  "deviceName" 				value = "SM-N9208" />
+<parameter name = "driverName" 				value = "Android" />
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "userName" 				value = "admin.fccm@yopmail.com" />
+<parameter name = "password" 				value = "admin.fccm@yopmail.com" />
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestListener" />
+</listeners>
+
+<groups>
+<run>
+<include name = "fc1555_uat" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+<!--
+ 	<test name = "Android Tests" preserve-order="false" >
+	<parameter name = "platformName" 				value = "Android" />
+	<parameter name = "platformVersion" 				value = "7.0" />
+	<parameter name = "app" 							value ="/ele/sim/elektra.apk" />
+	<parameter name = "appPackage" 					value = "com.fluke.deviceApp" />
+	<parameter name = "appActivity" 					value = "com.fluke.deviceApp.LoginActivity" />
+	<parameter name = "deviceName" 					value = "SM-N9208" />
+	<parameter name = "driverName" 					value = "Android" />
+	<parameter name = "environmentName" 				value = "PreProduction" />
+	<parameter name = "userName" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "password" 					value = "desktop_uat@yopmail.com" />
+	<parameter name = "appInstallFlag"				value = "false"  />
+	<parameter name = "handleUpgradeAlert"			value = "false"  />
+	
+	<groups>
+	<run>
+	<include name="asset_uat" />
+	</run>
+	</groups>
+	<packages>
+	<package name="com.fluke.connect.app.*" />
+	</packages>
+    </test>
+  -->  
+</suite>

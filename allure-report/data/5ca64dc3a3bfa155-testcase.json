@@ -1,0 +1,62 @@
+{
+  "uid" : "5ca64dc3a3bfa155",
+  "name" : "resourceCenterVisualTest",
+  "title" : "Resource Center Visual Test",
+  "time" : {
+    "start" : 1493623409028,
+    "stop" : 1493623424975,
+    "duration" : 15947
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Verify resouce center screen in app matches with the wireframe design layout",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "4ab6516bcb0fde34",
+    "name" : "Fluke Connect Test Suite : iOS Visual Tests[appActivity=iOS, password=123456, environmentName=Devolpment, platformVersion=10.2, bundleID=com.fluke.mobility.elektra, driverName=iOS, platformName=iOS, userName=QA@yopmail.com, deviceName=iPhone 6]",
+    "title" : "Fluke Connect Test Suite : iOS Visual Tests[appActivity=iOS, password=123456, environmentName=Devolpment, platformVersion=10.2, bundleID=com.fluke.mobility.elektra, driverName=iOS, platformName=iOS, userName=QA@yopmail.com, deviceName=iPhone 6]"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Fluke Connect Test Suite : iOS Visual Tests[appActivity=iOS, password=123456, environmentName=Devolpment, platformVersion=10.2, bundleID=com.fluke.mobility.elektra, driverName=iOS, platformName=iOS, userName=QA@yopmail.com, deviceName=iPhone 6]"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "thread",
+    "value" : "1115@m-bang-isharma1.main(1)"
+  }, {
+    "name" : "testGroup",
+    "value" : "iOS Visual Tests"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testMethod",
+    "value" : "resourceCenterVisualTest"
+  }, {
+    "name" : "suite-title",
+    "value" : "Fluke Connect Test Suite : iOS Visual Tests[appActivity=iOS, password=123456, environmentName=Devolpment, platformVersion=10.2, bundleID=com.fluke.mobility.elektra, driverName=iOS, platformName=iOS, userName=QA@yopmail.com, deviceName=iPhone 6]"
+  }, {
+    "name" : "testSuite",
+    "value" : "Fluke Connect Test Suite"
+  }, {
+    "name" : "testClass",
+    "value" : "com.fluke.mobility.tests.VisualTests"
+  }, {
+    "name" : "host",
+    "value" : "m-bang-isharma1"
+  } ],
+  "parameters" : [ ]
+}

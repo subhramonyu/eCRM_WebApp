@@ -1,0 +1,104 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite"> 
+
+<test name = "Android Report Tests" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "driverName" 				value = "Android" />
+<parameter name = "platformVersion"   		value = "8.0." />
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/app/device/elektra.apk" />
+<parameter name = "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name = "appActivity" 				value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+<parameter name = "userName" 				value = "AndroidReportTeam@yopmail.com" />
+<parameter name = "password" 				value = "AndroidReportTeam@yopmail.com" />
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<parameter name = "systemPort"			value = "8020" />
+
+<groups>
+<run>
+<include name = "report_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+
+ 
+<test name = "iOS Reports Tests">
+
+<parameter name = "platformName"      	value = "iOS" />
+<parameter name = "platformVersion"   	value = "11.2.6" />
+<parameter name = "deviceName" 		  	value = "iPhone 6s" />
+<parameter name = "driverName" 		  	value = "iOS" />
+
+<parameter name = "app" 	  	            value = "/Users/isharma1/UAF/app/device/elektra.app" />  
+<parameter name = "bundleID"          	value = "com.fluke.mobility.elektra" />
+
+<parameter name = "environmentName" 	   	value = "PreProduction" /> 
+<parameter name = "userName" 			value = "iOSReportTeam@yopmail.com" />
+<parameter name = "password" 			value = "iOSReportTeam@yopmail.com" />
+
+<parameter name = "appInstallFlag"		value = "true"  />
+<parameter name = "handleUpgradeAlert"	value = "false"  />
+<parameter name = "isFeature"			value = "true" />
+<parameter name = "isRealDevice" 		value = "true" />
+
+<parameter name = "deviceUdid"			value = "2796895a3cdfc088ad3b88cbd9e9b6e7ca45912e" />
+<parameter name = "xcodeOrgId"			value = "WT537N6297" />
+<parameter name = "xcodeSigningId"		value = "Fluke Electronics Corporation" />
+
+<parameter name = "wdaLocalPort"			value = "8120" />
+
+<groups>
+<run>
+<include name="report_tests" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test>
+
+ <test name = "Report Tests Web">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "PreProduction" />
+<parameter name = "url"             			value = "https://preprod.connect.fluke.com" />
+<parameter name = "userName"       			value = "Reptests@yopmail.com" />
+<parameter name = "password"        			value = "Reptests@yopmail.com" />
+
+<parameter name = "isActiveSession"			value = "true"  />
+
+<groups>
+<run>
+<include name = "report_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+ 
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>
