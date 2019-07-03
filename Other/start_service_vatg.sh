@@ -1,1 +1,0 @@
-adb shell am start -n com.termux/.app.TermuxActivity && adb shell input text "cd\ go/src/github.com/flukeconnect/FCToolAutomation" &&  adb shell input keyevent 66 && adb shell input text "go\ run\ localhostservice.go\ VATG" && adb shell input keyevent 66
