@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name = "Fluke Connect Test Suite">
+<suite name = "eCRM Test Suite">
 
 <test name = "Web 3560 Regression Tests">
 
