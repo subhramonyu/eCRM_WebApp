@@ -8,6 +8,6 @@ public class UserCredentials
 	public static String userFirstName = "Test";
 	public static String userLastName = "User";
 	public static String countaryName = "United States";
-	public static String newUserInviteeID = "newuser@yopmail.com";
+	public static String newUserInviteeID = "newuser@mail.com";
 	
 }
