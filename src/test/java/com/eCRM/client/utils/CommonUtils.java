@@ -82,27 +82,7 @@ public class CommonUtils
 		System.out.println("********************************************************************************************");
 	}
 	
-	public static void wait(int androidWaitTimeInSeconds, int iOSWaitTimeInSeconds, int webWaitTimeInSeconds)
-	{
-		try 
-		{
-			if(DriverManager.getDriverName().equals(Config.ANDROID_DRIVER))
-			{
-				Thread.sleep(1000 * androidWaitTimeInSeconds);
-			}
-			else if(DriverManager.getDriverName().equals(Config.IOS_DRIVER))
-			{
-				Thread.sleep(1000 * iOSWaitTimeInSeconds);
-			}
-			else if(DriverManager.getDriverName().equals(Config.WEB_DRIVER))
-			{
-				Thread.sleep(1000 * webWaitTimeInSeconds);
-			}
-			
-		}
-		catch(Exception e){ }
-	}
-	
+
 	public static void throwNewClickException(WebElement element)
 	{
 		try 
@@ -147,6 +127,11 @@ public class CommonUtils
 	public static String getUserHomeDirectoryPath()
 	{
 		return System.getProperty("user.home");
+	}
+	
+	public static String getUserCurrentDirectoryPath()
+	{
+		return System.getProperty("user.dir");
 	}
 	
 	public static double getDoubleValue(String valueToBeConverted)
