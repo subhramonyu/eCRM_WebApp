@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.eCRM.client.pages.SignInPage;
+import com.eCRM.client.pages.LogInPage;
 import com.google.j2objc.annotations.ReflectionSupport.Level;
 
 import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
@@ -29,9 +29,9 @@ import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 public class DriverFactory {
 	public WebDriver driver;
 	private DesiredCapabilities capabilities;
-	private SignInPage signInPage;
+	private LogInPage signInPage;
 	private ChromeOptions chromeOptions = new ChromeOptions();
-	private GestureUtils gestureUtils;
+
 
 	@BeforeTest(groups = { Config.REGRESSION_TEST })
 
@@ -96,15 +96,14 @@ public class DriverFactory {
 				DriverManager.setDriver(driver);
 				DriverManager.setBrowserName(Config.FIREFOX_DRIVER);
 			}
-			driver.get(url);
+			driver.get(FileUtil.readFromPropertyFile(Config.Env_Property, "BASEURL"));
 			DriverManager.setBrowserName(browserName);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			DriverManager.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			DriverManager.setEnvironmentName(environmentName);
 			DriverManager.setUserName(userName);
 			DriverManager.setPassword(password);
-			signInPage = new SignInPage();
-			gestureUtils = new GestureUtils();
+			signInPage = new LogInPage();
 			DriverManager.setSignIn(signInPage);
 		} catch (
 

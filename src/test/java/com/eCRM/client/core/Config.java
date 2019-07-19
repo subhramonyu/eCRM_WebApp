@@ -28,13 +28,16 @@ public class Config
 	
 	
 	
+	// ****** Time out Constant **********
+	final public static int TIMEOUT_IN_SECONDS = 15;
+	final public static int POLLING_TIME_IN_SECONDS = 1;
 	
 
 	
 	//  file path
 	public final static String DRIVER_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/driver";
 	public final static String DEFAULT_DOWNLOAD_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/Downloads";
-	
+	public final static String Env_Property = CommonUtils.getUserCurrentDirectoryPath()+"/PropertiesFiles/Environment.properties";
 	
 	
 	public enum LocatorStrategy
@@ -64,7 +67,7 @@ public class Config
 		
 	public enum ScrollDiection
 	{
-		RIGHT, LEFT, UP, DOWN, NEXT, PREVIOUS, FLEXIBLE_UP, FLEXIBLE_DOWN
+		RIGHT, LEFT, UP, DOWN, NEXT
 	}
 	
 
@@ -74,8 +77,8 @@ public class Config
 		MEASUREMENTS_PROPERTIES, ASSET_PROPERTIES, FCCM_PROPERTIES
 	}
 	
-	public static String getPropertiesFilePath(PropertiesFileType propertyFileType)
-	{
+	public static String getPropertiesFilePath(PropertiesFileType propertyFileType) {
+	/*{
 		switch(propertyFileType)
 		{
 		case MEASUREMENTS_PROPERTIES:
@@ -116,7 +119,7 @@ public class Config
 			default:
 				return null;
 		}
-	
+	*/
 		return null;}
 	
 	

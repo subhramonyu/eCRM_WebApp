@@ -63,14 +63,11 @@ public class FileUtil
 
 	public static String readFromPropertyFile(String propertyFilePath, String propertyName)
 	{
-		try
-		{
-		    inputStream = new FileInputStream(propertyFilePath);
-			properties.load(inputStream);
-			return properties.getProperty(propertyName);
-		} 
-		catch (IOException io)
-		{
+		try {
+			properties.load(new FileInputStream(propertyFilePath));
+			return properties.getProperty(propertyName) != null ? properties.getProperty(propertyName).trim()
+					: properties.getProperty(propertyName);
+		} catch (IOException io) {
 			io.printStackTrace();
 		}
 		return null;
