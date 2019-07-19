@@ -2,74 +2,29 @@
 
 <suite name="eCRM Test Suite">
 
-	<test name="Web 3560 Regression Tests">
-
-		<parameter name="driverName" value="Web" />
+	<test name="Regression Tests">
+	
 		<parameter name="browserName" value="Chrome" />
-
 		<parameter name="environmentName" value="PreProduction" />
-		<parameter name="url"
-			value="https://preprod.connect.fluke.com" />
-
-		<parameter name="useExistingData" value="true" />
-
-		<parameter name="activeSessionStartTime3560"
-			value="06/12/2019, 3:12:48" />
-		<parameter name="completedSessionStartTime3560"
-			value="06/11/2019, 4:18:02" />
-
-
-		<parameter name="toggleFeature3560" value="false" />
-		<parameter name="activeSessionGatewayName3560"
-			value="Fluke 3502 Gateway (C2AE5)" />
-		<parameter name="completedSessionGatewayName3560"
-			value="Fluke 3502 Gateway (C2AE5)" />
-
-
-
+		<parameter name="userName" value="PreProduction" />
+		<parameter name="password" value="PreProduction" />
 		<groups>
 			<run>
-
-				<include name="3560_session_tests_web" />
-				<include name="3560_completed_session_tests_web" />
-
+				<include name="regression_test" />
 			</run>
 		</groups>
 
 		<packages>
-			<package name="com.fluke.connect.app.*" />
+			<package name="com.eCRM.client.*" />
 		</packages>
 
 	</test>
 
-	<test name="Web Reports Regression Tests">
 
-		<parameter name="driverName" value="Web" />
-		<parameter name="browserName" value="Chrome" />
-
-		<parameter name="environmentName" value="PreProduction" />
-		<parameter name="url"
-			value="https://preprod.connect.fluke.com" />
-
-		<parameter name="useExistingData" value="true" />
-
-		<groups>
-			<run>
-
-				<include name="report_tests_web" />
-
-			</run>
-		</groups>
-
-		<packages>
-			<package name="com.fluke.connect.app.*" />
-		</packages>
-
-	</test>
 
 	<listeners>
 		<listener
-			class-name="com.fluke.connect.app.utils.TestResultsReport" />
+			class-name="com.com.eCRM.client.core.ListenerUtils" />
 	</listeners>
 
 </suite>

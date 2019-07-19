@@ -148,11 +148,11 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>4.1.0</version>
 		</dependency>
-		
+
 		<dependency>
-   			 <groupId>com.lyncode</groupId>
-   			 <artifactId>xliff</artifactId>
-   			 <version>1.0.0</version>
+			<groupId>com.lyncode</groupId>
+			<artifactId>xliff</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
@@ -162,17 +162,17 @@
 		</dependency>
 
 		<dependency>
-    		<groupId>org.apache.commons</groupId>
-    		<artifactId>commons-lang3</artifactId>
-    		<version>3.8.1</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8.1</version>
 		</dependency>
-		
+
 		<dependency>
-    		<groupId>org.apache.commons</groupId>
+			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-configuration2</artifactId>
-   			 <version>2.0</version>
+			<version>2.0</version>
 		</dependency>
-		
+
 
 	</dependencies>
 
@@ -238,6 +238,13 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<name>bintray</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
 
 
 </project>

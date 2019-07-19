@@ -2,7 +2,7 @@ package com.eCRM.client.core;
 
 import org.openqa.selenium.WebDriver;
 
-import com.eCRM.client.pages.SignInPage;
+import com.eCRM.client.pages.LogInPage;
 
 public class DriverManager {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
@@ -10,7 +10,7 @@ public class DriverManager {
 	private static ThreadLocal<String> environmentName = new ThreadLocal<String>();
 	private static ThreadLocal<String> userName = new ThreadLocal<String>();
 	private static ThreadLocal<String> password = new ThreadLocal<String>();
-	private static ThreadLocal<SignInPage> signIn = new ThreadLocal<SignInPage>();
+	private static ThreadLocal<LogInPage> signIn = new ThreadLocal<LogInPage>();
 
 	public static WebDriver getDriver() {
 		return driver.get();
@@ -20,11 +20,11 @@ public class DriverManager {
 		driver.set(driverObject);
 	}
 
-	public static SignInPage getSignIn() {
+	public static LogInPage getSignIn() {
 		return signIn.get();
 	}
 
-	public static void setSignIn(SignInPage signInObject) {
+	public static void setSignIn(LogInPage signInObject) {
 		signIn.set(signInObject);
 	}
 
