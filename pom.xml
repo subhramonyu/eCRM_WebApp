@@ -144,11 +144,35 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		
+		<dependency>
+   			 <groupId>com.lyncode</groupId>
+   			 <artifactId>xliff</artifactId>
+   			 <version>1.0.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.liferay</groupId>
 			<artifactId>net.jsourcerer.webdriver.JSErrorCollector</artifactId>
 			<version>0.6</version>
 		</dependency>
 
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-lang3</artifactId>
+    		<version>3.8.1</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+			<artifactId>commons-configuration2</artifactId>
+   			 <version>2.0</version>
+		</dependency>
+		
 
 	</dependencies>
 
@@ -195,9 +219,6 @@
 	</build>
 
 
-	<!-- <repositories> <repository> <id>qmetrytestmanager-mvn-repo</id> <name>QMetry 
-		Test Manager Maven Repository</name> <url>https://raw.github.com/qmetry/qtm4j-maven-uploader/mvn-repo/</url> 
-		</repository> </repositories> -->
 
 	<reporting>
 		<excludeDefaults>true</excludeDefaults>

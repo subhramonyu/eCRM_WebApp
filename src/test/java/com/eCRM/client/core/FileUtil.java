@@ -1,4 +1,4 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import java.io.BufferedWriter;
 import java.io.File;

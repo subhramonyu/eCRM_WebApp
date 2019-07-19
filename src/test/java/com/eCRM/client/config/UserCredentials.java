@@ -1,4 +1,4 @@
-package com.eCRM.client.testdata;
+package com.eCRM.client.config;
 
 public class UserCredentials 
 {

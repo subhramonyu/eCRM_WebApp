@@ -1,4 +1,4 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import com.eCRM.client.testpages.SignInPage;
+
+import com.eCRM.client.pages.SignInPage;
 import com.google.j2objc.annotations.ReflectionSupport.Level;
 
 import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;

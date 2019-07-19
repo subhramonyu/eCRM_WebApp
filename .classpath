@@ -35,7 +35,37 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="/eCRM/lib/testng-6.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="/eCRM/lib/testng-6.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="/eCRM/lib/pdfbox-app-1.8.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/subhramd/.m2/repository/org/glassfish/grizzly/grizzly-http/2.3.3/grizzly-http-2.3.3.jar" sourcepath="C:/Users/subhramd/.m2/repository/org/glassfish/grizzly/grizzly-http/2.3.3/grizzly-http-2.3.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/subhramd/.m2/repository/org/glassfish/grizzly/grizzly-http/2.3.3/grizzly-http-2.3.3-javadoc.jar!/"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.glassfish.grizzly"/>
+			<attribute name="maven.artifactId" value="grizzly-http"/>
+			<attribute name="maven.version" value="2.3.3"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/subhramd/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48.jar" sourcepath="C:/Users/subhramd/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/subhramd/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48-javadoc.jar!/"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.beust"/>
+			<attribute name="maven.artifactId" value="jcommander"/>
+			<attribute name="maven.version" value="1.48"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/subhramd/.m2/repository/org/apache/pdfbox/pdfbox/2.0.14/pdfbox-2.0.14.jar" sourcepath="C:/Users/subhramd/.m2/repository/org/apache/pdfbox/pdfbox/2.0.14/pdfbox-2.0.14-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/subhramd/.m2/repository/org/apache/pdfbox/pdfbox/2.0.14/pdfbox-2.0.14-javadoc.jar!/"/>
+			<attribute name="maven.groupId" value="org.apache.pdfbox"/>
+			<attribute name="maven.artifactId" value="pdfbox"/>
+			<attribute name="maven.version" value="2.0.14"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

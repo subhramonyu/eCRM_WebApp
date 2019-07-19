@@ -1,14 +1,14 @@
-package com.eCRM.client.testpages;
+package com.eCRM.client.pages;
 
 import java.time.temporal.ChronoUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import com.eCRM.client.utils.CommonUtils;
-import com.eCRM.client.utils.Config;
-import com.eCRM.client.utils.DriverManager;
-import com.eCRM.client.utils.ElementUtils;
+import com.eCRM.client.core.CommonUtils;
+import com.eCRM.client.core.Config;
+import com.eCRM.client.core.DriverManager;
+import com.eCRM.client.core.ElementUtils;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;

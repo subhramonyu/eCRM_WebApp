@@ -1,14 +1,14 @@
-package com.eCRM.client.testcases;
+package com.eCRM.client.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.eCRM.client.testdata.UserCredentials;
-import com.eCRM.client.testpages.SignUpPage;
-import com.eCRM.client.utils.Config;
-import com.eCRM.client.utils.DriverManager;
-import com.eCRM.client.utils.RandomGeneratorUtils;
+import com.eCRM.client.config.UserCredentials;
+import com.eCRM.client.core.Config;
+import com.eCRM.client.core.DriverManager;
+import com.eCRM.client.core.RandomGeneratorUtils;
+import com.eCRM.client.pages.SignUpPage;
 
 public class SingUpTests {
 	private SignUpPage signUpPage;
