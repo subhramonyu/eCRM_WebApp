@@ -1,21 +1,21 @@
-package com.eCRM.client.testpages;
+package com.eCRM.client.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import com.eCRM.client.testdata.UserCredentials;
-import com.eCRM.client.testpages.SignInPage.SigninPageObjects;
-import com.eCRM.client.utils.AndroidUtils;
-import com.eCRM.client.utils.CommonUtils;
-import com.eCRM.client.utils.Config;
-import com.eCRM.client.utils.DriverManager;
-import com.eCRM.client.utils.ElementUtils;
-import com.eCRM.client.utils.GestureUtils;
-import com.eCRM.client.utils.IOSUtils;
-import com.eCRM.client.utils.VisualUtils;
-import com.eCRM.client.utils.Config.LocatorStrategy;
-import com.eCRM.client.utils.Config.ScrollDiection;
+import com.eCRM.client.config.UserCredentials;
+import com.eCRM.client.core.AndroidUtils;
+import com.eCRM.client.core.CommonUtils;
+import com.eCRM.client.core.Config;
+import com.eCRM.client.core.DriverManager;
+import com.eCRM.client.core.ElementUtils;
+import com.eCRM.client.core.GestureUtils;
+import com.eCRM.client.core.IOSUtils;
+import com.eCRM.client.core.VisualUtils;
+import com.eCRM.client.core.Config.LocatorStrategy;
+import com.eCRM.client.core.Config.ScrollDiection;
+import com.eCRM.client.pages.SignInPage.SigninPageObjects;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

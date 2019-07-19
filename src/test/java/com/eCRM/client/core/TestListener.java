@@ -1,4 +1,4 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

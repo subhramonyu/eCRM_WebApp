@@ -1,8 +1,8 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import org.openqa.selenium.WebDriver;
 
-import com.eCRM.client.testpages.SignInPage;
+import com.eCRM.client.pages.SignInPage;
 
 public class DriverManager {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();

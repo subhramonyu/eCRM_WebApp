@@ -1,4 +1,4 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-import com.eCRM.client.utils.Config.LocatorStrategy;
+import com.eCRM.client.core.Config.LocatorStrategy;
 import com.google.common.base.Function;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -28,7 +28,7 @@ public class ElementUtils
 	
 	
 	
-	// ***************************************  GET ELEMENT METHODS *************************************************
+	// ***************************************  Find ELEMENT METHODS *************************************************
 	
 	
 	
@@ -75,7 +75,7 @@ public class ElementUtils
 
 	
 	
-	public static List<WebElement> getElements(WebElement parentElement, LocatorStrategy androidLocatorStrategy, String androidAttributeValue, LocatorStrategy iOSLocatorStrategy, String iOSAttributeValue, LocatorStrategy webLocatorStrategy, String webAttributeValue)
+	public static List<WebElement> getElements(WebElement parentElement, LocatorStrategy webLocatorStrategy, String webAttributeValue)
 	{
 		try
 		{
@@ -121,87 +121,6 @@ public class ElementUtils
 	
 	// ***************************************  IS DISPLAYED / ENABLED METHODS *************************************************
 	
-
-	
-
-	public static boolean isNotDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, LocatorStrategy androidLocatorStrategy, String androidAttributeValue, LocatorStrategy iOSLocatorStrategy, String iOSAttributeValue, LocatorStrategy webLocatorStrategy, String webAttributeValue)
-	{
-		try
-		{
-			if(getElement( webLocatorStrategy, webAttributeValue).isDisplayed())
-			{
-				return false;	
-			}
-				
-		}
-		catch(NullPointerException e)
-		{
-			return true;
-		}
-			
-		return false;
-		
-	}
-	
-	public static boolean isNotDisplayed(WebElement element)
-	{
-		try
-		{
-			if(element.isDisplayed())
-				return false;
-			else
-				return true;
-		}
-		catch(Exception e)
-		{
-			return true;
-		}
-	}
-	
-	public static boolean isNotDisplayed(WebElement element, int retryCount)
-	{
-		for(int i = 0; i < retryCount; i++)
-		{
-			try {
-				if(element.isDisplayed())
-					CommonUtils.wait(1);
-				else
-					return true;
-			}
-			catch(Exception e) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-
-	public static boolean isDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, LocatorStrategy webLocatorStrategy, String webAttributeValue) 
-	{
-		try
-		{
-			if (timeoutInSeconds == 0)
-				timeoutInSeconds = TIMEOUT_IN_SECONDS;
-			if (pollingTimeInSeconds == 0)
-				pollingTimeInSeconds = POLLING_TIME_IN_SECONDS;
-			fluentWait = new FluentWait<WebDriver>(DriverManager.getDriver())
-					.pollingEvery(Duration.ofSeconds(pollingTimeInSeconds))
-					.withTimeout(Duration.ofSeconds(timeoutInSeconds))
-					.ignoring(NoSuchElementException.class, Error.class);
-
-			fluentWaitElement = getElement(webLocatorStrategy, webAttributeValue);
-			return fluentWait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					return fluentWaitElement.isDisplayed();
-				}
-			});
-		}
-		catch(TimeoutException e)
-		{
-			return false;
-		}
-	}
-	
 	public static boolean isDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element)
 	{
 		try
@@ -232,44 +151,7 @@ public class ElementUtils
 		}
 	}
 	
-	public static boolean isNotDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element)
-	{
-		try
-		{
-			if(timeoutInSeconds == 0)
-				timeoutInSeconds = TIMEOUT_IN_SECONDS;
-			if(pollingTimeInSeconds == 0)
-				pollingTimeInSeconds = POLLING_TIME_IN_SECONDS;
-			
-				fluentWait = new FluentWait<WebDriver>(DriverManager.getDriver())
-						.pollingEvery(Duration.ofSeconds(pollingTimeInSeconds))
-						.withTimeout(Duration.ofSeconds(timeoutInSeconds))
-							.ignoring(NoSuchElementException.class, Error.class);
-		
-			fluentWaitElement = element;
-			return fluentWait.until(new Function<WebDriver, Boolean>() 
-			{
-				public Boolean apply(WebDriver driver) 
-				{
-					if(fluentWaitElement.isDisplayed())
-					{
-						return false;
-					}
-					else
-					{
-						return true;
-					}
-				}
-			}
-		);
-		}
-		catch(Throwable e)
-		{
-			e.printStackTrace();
-			return false;
-		}
-	}
-
+	
 	public static boolean isDisplayedAndEnabled(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element)
 	{
 		try
@@ -299,40 +181,6 @@ public class ElementUtils
 		}
 	}
 	
-
-	public static boolean isEnabled(int timeoutInSeconds, WebElement element)
-	{
-		for(int i = 0; i < timeoutInSeconds; i++)
-		{
-			try
-			{
-				if(element.isEnabled())
-					return true;
-			}
-			catch(Exception e)
-			{ 
-				CommonUtils.wait(1);
-			}
-		}
-		return false;
-	}
-	
-	public static boolean isEnabled(WebElement element)
-	{
-		try
-		{
-			if(element.isEnabled())
-			{
-				return true;
-			}	
-		}
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
 	
 	public static boolean isNotNull(int timeoutInSeconds, WebElement element)
 	{
@@ -353,54 +201,6 @@ public class ElementUtils
 	
 	// *************************************** CLICK METHODS ********************************************************
 	
-	public static void clickIfDisplayedAndEnabled(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element) throws Exception 
-	{
-		try
-		{
-			if(isDisplayedAndEnabled(timeoutInSeconds, pollingTimeInSeconds, element))
-			{
-				element.click();
-			}
-		}
-		catch(Throwable e)
-		{
-			e.printStackTrace();
-			throw new Exception();
-		}
-	}
-
-	public static void clickIfDisplayedAndEnabled(WebElement element) throws Exception
-	{
-		try
-		{
-			if(isDisplayedAndEnabled(TIMEOUT_IN_SECONDS, POLLING_TIME_IN_SECONDS, element))
-			{
-				element.click();
-			}
-		}
-		catch(Throwable e)
-		{
-			e.printStackTrace();
-			throw new Exception();
-		}
-	}
-	
-	public static void clickIfDisplayedAndEnabled( LocatorStrategy webLocatorStrategy, String webLocatorValue) throws Exception
-	{
-		try
-		{
-			WebElement desiredElement = getElement( webLocatorStrategy, webLocatorValue);
-			if(isDisplayedAndEnabled(15, 1, desiredElement))
-			{
-				desiredElement.click();
-			}
-		}
-		catch(Throwable e)
-		{
-			e.printStackTrace();
-			throw new Exception();
-		}
-	}
 	
 	
 	public static void click(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element)

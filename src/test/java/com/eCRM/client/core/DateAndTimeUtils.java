@@ -1,4 +1,4 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
 import java.io.IOException;
 import java.text.ParseException;

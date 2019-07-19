@@ -1,15 +1,15 @@
-package com.eCRM.client.testcases;
+package com.eCRM.client.tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.eCRM.client.testdata.FCCM3560;
-import com.eCRM.client.testpages.HomePage;
-import com.eCRM.client.utils.CommonUtils;
-import com.eCRM.client.utils.ElementUtils;
-import com.eCRM.client.utils.GestureUtils;
-import com.eCRM.client.utils.Config.LocatorStrategy;
+import com.eCRM.client.config.FCCM3560;
+import com.eCRM.client.core.CommonUtils;
+import com.eCRM.client.core.ElementUtils;
+import com.eCRM.client.core.GestureUtils;
+import com.eCRM.client.core.Config.LocatorStrategy;
+import com.eCRM.client.pages.HomePage;
 
 import junit.framework.Assert;
 

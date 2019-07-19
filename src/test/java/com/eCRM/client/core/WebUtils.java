@@ -1,6 +1,6 @@
-package com.eCRM.client.utils;
+package com.eCRM.client.core;
 
-import com.eCRM.client.utils.Config.ScrollDiection;
+import com.eCRM.client.core.Config.ScrollDiection;
 
 public class WebUtils 
 {
