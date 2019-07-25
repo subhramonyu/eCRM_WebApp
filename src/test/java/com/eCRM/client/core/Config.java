@@ -24,8 +24,11 @@ public class Config
 	
 	final public static String REGRESSION_TEST="regression_test";
 	
-	
-	
+	// *********** User Details ********************
+	public enum UserDetails
+	{
+		FULLNAME,FIRST_NAME,LAST_NAME,ADDRESS,CITY,POSTCODE;
+	}
 	
 	
 	// ****** Time out Constant **********
@@ -34,8 +37,8 @@ public class Config
 	
 
 	
-	//  file path
-	public final static String DRIVER_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/driver";
+	// *********** file path **************
+	public final static String DRIVER_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/drivers";
 	public final static String DEFAULT_DOWNLOAD_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/Downloads";
 	public final static String Env_Property = CommonUtils.getUserCurrentDirectoryPath()+"/PropertiesFiles/Environment.properties";
 	
@@ -64,7 +67,7 @@ public class Config
  	
 	
 	
-		
+	// ****** scroll direction *********	
 	public enum ScrollDiection
 	{
 		RIGHT, LEFT, UP, DOWN, NEXT
@@ -77,50 +80,7 @@ public class Config
 		MEASUREMENTS_PROPERTIES, ASSET_PROPERTIES, FCCM_PROPERTIES
 	}
 	
-	public static String getPropertiesFilePath(PropertiesFileType propertyFileType) {
-	/*{
-		switch(propertyFileType)
-		{
-		case MEASUREMENTS_PROPERTIES:
-			if (DriverManager.getEnvironmentName().equals(Config.PRODUCTION)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return FCM.EXISTING_MEASUREMENTS_PROPERTIES_FILE_PATH_PROD;
-				else
-					return FCM.MEASUREMENTS_PROPERTIES_FILE_PATH_PROD;
-			} else if (DriverManager.getEnvironmentName().equals(Config.PREPRODUCTION)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return FCM.EXISTING_MEASUREMENTS_PROPERTIES_FILE_PATH;
-				else
-					return FCM.MEASUREMENTS_PROPERTIES_FILE_PATH;
-			} else if (DriverManager.getEnvironmentName().equals(Config.DEVELOPMENT)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return FCM.EXISTING_MEASUREMENTS_PROPERTIES_FILE_PATH_DEV;
-				else
-					return FCM.MEASUREMENTS_PROPERTIES_FILE_PATH_DEV;
-			}
-		case FCCM_PROPERTIES:
-			if (DriverManager.getEnvironmentName().equals(Config.PRODUCTION)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return EXISTING_FCCM_PROPERTIES_FILE_PATH_PROD;
-				else
-					return FCCM_PROPERTIES_FILE_PATH_PROD;
-
-			} else if (DriverManager.getEnvironmentName().equals(Config.PREPRODUCTION)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return EXISTING_FCCM_PROPERTIES_FILE_PATH;
-				else
-					return FCCM_PROPERTIES_FILE_PATH;
-			} else if (DriverManager.getEnvironmentName().equals(Config.DEVELOPMENT)) {
-				if (DriverManager.getUseExistingDataFlag())
-					return EXISTING_FCCM_PROPERTIES_FILE_PATH_DEV;
-				else
-					return FCCM_PROPERTIES_FILE_PATH_DEV;
-			}
-			default:
-				return null;
-		}
-	*/
-		return null;}
+	
 	
 	
 }

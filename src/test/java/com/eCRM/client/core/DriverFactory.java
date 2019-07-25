@@ -27,11 +27,10 @@ import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
 @SuppressWarnings("unused")
 public class DriverFactory {
-	public WebDriver driver;
+	public static  WebDriver driver;
 	private DesiredCapabilities capabilities;
-	private LogInPage signInPage;
+	private LogInPage login;
 	private ChromeOptions chromeOptions = new ChromeOptions();
-
 
 	@BeforeTest(groups = { Config.REGRESSION_TEST })
 
@@ -51,33 +50,31 @@ public class DriverFactory {
 				DriverManager.setDriver(driver);
 				DriverManager.setBrowserName("ChromeHeadless");
 			}
-			
+
 			else if (browserName.equals("Chrome")) {
-				System.setProperty("webdriver.chrome.driver", Config.DRIVER_PATH+"/chromedriver.exe");
-				
+				System.setProperty("webdriver.chrome.driver", Config.DRIVER_PATH + "/chromedriver.exe");
+
 				// loggingprefs = new LoggingPreferences();
-				//loggingprefs.enable("browser", Level.NATIVE_ONLY);
-				//capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
+				// loggingprefs.enable("browser", Level.NATIVE_ONLY);
+				// capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
 
 				ChromeOptions chromeOptions = new ChromeOptions();
 				Map<String, Object> prefs = new HashMap<String, Object>();
 				prefs.put("download.default_directory", Config.DEFAULT_DOWNLOAD_PATH);
 				prefs.put("download.prompt_for_download", false);
-				chromeOptions.setExperimentalOption("prefs", prefs);
+				//chromeOptions.setExperimentalOption("prefs", prefs);
 				chromeOptions.addArguments("--disable-pdf-material-ui");
 				chromeOptions.addArguments("--disable-out-of-process-pdf");
 				chromeOptions.addArguments("--start-maximized");
-				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				// capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
-				driver = new ChromeDriver(capabilities);
-				driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
+				driver = new ChromeDriver(chromeOptions);
 				DriverManager.setDriver(driver);
 				DriverManager.setBrowserName(Config.CHROME_DRIVER);
-				
+
 			} else if (browserName.equals("Firefox")) {
-			
-			
-				System.setProperty("webdriver.gecko.driver", Config.DRIVER_PATH+"/geckodriver.exe");
+
+				System.setProperty("webdriver.gecko.driver", Config.DRIVER_PATH + "/geckodriver.exe");
 				FirefoxProfile firefoxProfile = new FirefoxProfile();
 				firefoxProfile.setPreference("browser.download.folderList", 2);
 				firefoxProfile.setPreference("browser.download.manager.showWhenStarting", false);
@@ -96,27 +93,26 @@ public class DriverFactory {
 				DriverManager.setDriver(driver);
 				DriverManager.setBrowserName(Config.FIREFOX_DRIVER);
 			}
+		
 			driver.get(FileUtil.readFromPropertyFile(Config.Env_Property, "BASEURL"));
 			DriverManager.setBrowserName(browserName);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			DriverManager.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-			DriverManager.setEnvironmentName(environmentName);
 			DriverManager.setUserName(userName);
 			DriverManager.setPassword(password);
-			signInPage = new LogInPage();
-			DriverManager.setSignIn(signInPage);
+			//Ensure to load the page
+			CommonUtils.wait(5);
+			
+			login = new LogInPage();
+			login.login();
+			
 		} catch (
 
 		Throwable e) {
 			e.printStackTrace();
-			throw new Exception("Unable to signin");
 		}
 	}
 
 	@AfterTest(groups = { Config.REGRESSION_TEST })
-
-	@Parameters({ "driverName" })
-	public void tearDown(String driverName) {
+	public void tearDown() {
 		try {
 			CommonUtils.wait(2);
 			driver.quit();

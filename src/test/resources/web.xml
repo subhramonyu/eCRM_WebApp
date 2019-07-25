@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="eCRM Test Suite">
+<suite name="eCRM TEST SUITE">
 
 	<test name="Regression Tests">
-	
+
 		<parameter name="browserName" value="Chrome" />
 		<parameter name="environmentName" value="PreProduction" />
-		<parameter name="userName" value="PreProduction" />
-		<parameter name="password" value="PreProduction" />
+		<parameter name="userName" value="vc" />
+		<parameter name="password" value="a" />
 		<groups>
 			<run>
 				<include name="regression_test" />
@@ -23,8 +23,7 @@
 
 
 	<listeners>
-		<listener
-			class-name="com.com.eCRM.client.core.ListenerUtils" />
+		<listener class-name="com.eCRM.client.core.ListenerUtils" />
 	</listeners>
 
 </suite>

@@ -1,54 +1,27 @@
 package com.eCRM.client.core;
 
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-import javax.imageio.ImageIO;
-import org.apache.commons.io.FileUtils;
-import org.apache.tools.ant.taskdefs.condition.And;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-import org.testng.internal.annotations.TestAnnotation;
 
 import com.eCRM.client.core.Config.LocatorStrategy;
 import com.eCRM.client.core.Config.ScrollDiection;
-import com.eCRM.client.pages.LogInPage;
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.PerformsTouchActions;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.TapOptions;
+
+import ru.yandex.qatools.allure.annotations.Step;
 
 @SuppressWarnings({"unused"})
 public class CommonUtils 
@@ -74,11 +47,12 @@ public class CommonUtils
 
 	// ************************* Actions and Events methods **********************************
 
-	
+	@Step("Moving to Element : {0}")
 	public static void moveToElement(WebElement element) {
 		actions.moveToElement(element).build().perform();
 	}
 
+	@Step("Moving and Clicking on Element : {0}")
 	public static void moveAndClickElement(WebElement element) {
 		actions.moveToElement(element).click().build().perform();
 	}
@@ -89,6 +63,7 @@ public class CommonUtils
 	
 	//*********************** Scroll methods **************************************
 
+	@Step("Scrolling by Steps : {0}")
 	public void scroll(int scrollSteps, int scrollCount) 
 	{
 		for (int i = 0; i < scrollCount; i++) {
@@ -97,7 +72,7 @@ public class CommonUtils
 		}
 	}
 		
-	
+	@Step("Scrolling to the Element : {0}")
 	public boolean scrollToElement(WebElement element) {
 		try {
 			javaScriptExecutor.executeScript("arguments[0].scrollIntoView();", element);
@@ -111,6 +86,7 @@ public class CommonUtils
 		}
 	}
 
+	@Step("Scrolling to the Element :{0}  in the direction : {1}")
 	public boolean scrollToElement(WebElement element, ScrollDiection scrollDirection,
 			int scrollCount) {
 		if (isDisplayed(10, 1, element))
@@ -131,7 +107,7 @@ public class CommonUtils
 		return false;
 	}
 
-	
+	@Step("Pop up scrolling : {0}")
 	public void popupScroll(WebElement parentElement, WebElement childElement, ScrollDiection scrollDirection,
 			int scrollCount) {
 		for (int i = 0; i < scrollCount; i++) {
@@ -148,6 +124,7 @@ public class CommonUtils
 		CommonUtils.wait(2);
 	}
 
+	@Step("Pop up scrolling to element : {0}")
 	public void webPopupScroll(WebElement parentElement, int scrollSteps, int scrollCount) {
 		if (scrollSteps <= 0)
 			javaScriptExecutor.executeScript("arguments[0].scrollTop = arguments[1];",
@@ -163,7 +140,7 @@ public class CommonUtils
 	
 	
 	
-	
+	@Step("Getting the webElement : {1}")
 		public static WebElement getElement( LocatorStrategy webLocatorStrategy, String webAttributeValue)
 		{
 			WebElement returnElement = null;
@@ -205,7 +182,7 @@ public class CommonUtils
 		}
 
 		
-		
+		@Step("Getting the list of webElements")
 		public static List<WebElement> getElements(WebElement parentElement, LocatorStrategy webLocatorStrategy, String webAttributeValue)
 		{
 			try
@@ -252,29 +229,22 @@ public class CommonUtils
 		
 		// ***************************************  IS DISPLAYED / ENABLED METHODS *************************************************
 		
+		@Step("Is element is Displayed : {2}")
 		public static boolean isDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, WebElement aNelement)
 		{
 			try
-			{
-				if(timeoutInSeconds == 0)
-					timeoutInSeconds = Config.TIMEOUT_IN_SECONDS;
-				if(pollingTimeInSeconds == 0)
-					pollingTimeInSeconds = Config.POLLING_TIME_IN_SECONDS;
-				
-					fluentWait = new FluentWait<WebDriver>(DriverManager.getDriver())
-							.pollingEvery(Duration.ofSeconds(pollingTimeInSeconds))
-							.withTimeout(Duration.ofSeconds(timeoutInSeconds))
-								.ignoring(NoSuchElementException.class, Error.class);
-				element = aNelement;
-				return fluentWait.until ( new Function<WebDriver, Boolean>() 
-				{
-					public Boolean apply(WebDriver driver)
-					{
-						return element.isDisplayed();
-					}
+		{
+			fluentWait = new FluentWait<WebDriver>(DriverManager.getDriver())
+					.pollingEvery(Duration.ofSeconds(pollingTimeInSeconds))
+					.withTimeout(Duration.ofSeconds(timeoutInSeconds))
+					.ignoring(NoSuchElementException.class, Error.class);
+			element = aNelement;
+			return fluentWait.until(new Function<WebDriver, Boolean>() {
+				public Boolean apply(WebDriver driver) {
+					return element.isDisplayed();
 				}
-			);
-			}
+			});
+		}
 			catch(Throwable e)
 			{
 				e.printStackTrace();
@@ -283,6 +253,7 @@ public class CommonUtils
 		}
 		
 		
+		@Step("Is Displayed element is enabled : {0}")
 		public static boolean isDisplayedAndEnabled(int timeoutInSeconds, int pollingTimeInSeconds, WebElement aNelement)
 		{
 			try
@@ -313,32 +284,15 @@ public class CommonUtils
 		}
 		
 		
-		public static boolean isNotNull(int timeoutInSeconds, WebElement element)
-		{
-			for(int i = 0; i < timeoutInSeconds; i++)
-			{
-				try
-				{
-					if(element != null)
-						return true;
-				}
-				catch(Exception e)
-				{ 
-					CommonUtils.wait(timeoutInSeconds);
-				}
-			}
-			return false;
-		}
-		
 		// *************************************** CLICK METHODS ********************************************************
 		
 		
-		
-		public static void click(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element)
+		@Step("Clicking on the WebElement : {0}")
+		public static void click(WebElement element)
 		{
 			try
 			{
-				if(isDisplayed(timeoutInSeconds, pollingTimeInSeconds, element))
+				if(isDisplayed(Config.TIMEOUT_IN_SECONDS, Config.POLLING_TIME_IN_SECONDS, element))
 				element.click();
 			}
 			catch(Throwable e)
@@ -348,6 +302,7 @@ public class CommonUtils
 		}
 		
 
+		@Step("Clicking on the WebElement : {2}")
 		public static void click(int timeoutInSeconds, int pollingTimeInSeconds, WebElement elementToBeClicked, WebElement elementToBeVisibleAfterClick, int retryCount) throws Exception
 		{
 			try
@@ -383,7 +338,9 @@ public class CommonUtils
 			}
 		}
 		
-		public  static void click(WebElement element)
+		
+		@Step("Clicking on the WebElement : {0}")
+		public  static void jsclick(WebElement element)
 		{
 			try 
 			{
@@ -395,11 +352,15 @@ public class CommonUtils
 	        }
 		}
 		
-		
+		@Step("Selecting from the drop down by index :{1}")
+		public void selectFromDropdown(WebElement element,int indexToBeSelected){
+			Select aSelect = new Select(element);
+			  aSelect.selectByIndex(indexToBeSelected);
+		}
 		
 		// ***************************************  SEND KEYS METHODS *************************************************
 		
-		
+		@Step("Sending Text : {1} to element : {0}")
 		public static void sendKeys(WebElement element, String textToBeTyped)
 		{
 			try {
@@ -410,7 +371,7 @@ public class CommonUtils
 			}
 		}
 
-		
+		@Step("Sending Text : {3} to element : {2}")
 		public static void sendKeys(int timeoutInSeconds, int pollingTimeInSeconds, WebElement element, String textToBeTyped, int retryCount)
 		{
 			try
@@ -460,9 +421,8 @@ public class CommonUtils
 	
 	//************************  Miscellaneous methods *****************************  
 	
-	
-	
-		public static void executeCommandOnTerminal(String command)
+	@Step("Executing Command : {0} ")
+		public static void executeCommand(String command)
 		{
 			try
 			{
@@ -471,6 +431,8 @@ public class CommonUtils
 			catch(Exception e){ }
 		}
 		
+	
+	@Step("Waiting for : {0} seconds")
 		public static void wait(int seconds)
 		{
 			try 
@@ -481,37 +443,61 @@ public class CommonUtils
 		}
 		
 		
+	@Step("Spliting the string : {0} with separator : {1}")
 		public static String[] split(String mainString, String... sepeartor)
 		{
 			String getString= Arrays.toString(sepeartor);
 			return mainString.split(getString);
 		}
 		
+	@Step("Get the screen width")
 		public int getScreenWidth() {
 			return DriverManager.getDriver().manage().window().getSize().getWidth();
 		}
 
+	@Step("Get the Screen height")
 		public int getScreenHeight() {
 			return DriverManager.getDriver().manage().window().getSize().getHeight();
 		}
 
+	@Step("Get the Element location : {0}")
 		public Point getElementLocation(WebElement element) {
 			return element.getLocation();
 		}
 
+	@Step("Get the Element Dimension : {0}")
 		public Dimension getElementDimension(WebElement element) {
 			return element.getSize();
 		}	
 
+	@Step("Getting the User home directory path")
 		public static String getUserHomeDirectoryPath()
 		{
 			return System.getProperty("user.home");
 		}
-		
+	
+	@Step("Getting the  User Current directory path")
 		public static String getUserCurrentDirectoryPath()
 		{
 			return System.getProperty("user.dir");
 		}
+	
+	@Step("switching to Frame : {0}")
+	public void switchToFrame(WebElement element) {
+		DriverManager.getDriver().switchTo().frame(element);
+	}
+	
+	@Step("switching to default Content")
+	public void switchToDefaultContent() {
+		DriverManager.getDriver().switchTo().defaultContent();
+	}
+	
+	@Step("get the current Frame")
+	public Object getCurrentFrame() {	
+		return javaScriptExecutor.executeScript("return self.name");
+	}
+	
+	
 		
 }
 	
