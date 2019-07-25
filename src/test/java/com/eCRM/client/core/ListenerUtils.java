@@ -69,12 +69,12 @@ public class ListenerUtils extends TestListenerAdapter {
         Log.info("Skipped Tests: " + context.getSkippedTests().getAllMethods());
 	}
 	
-	@Attachment(value = "Screenshot of {0} test", type = "image/png")
+	@Attachment(value = "Screenshot of {0} ", type = "image/png")
     private byte[] takeScreenShot(String methodName) {
 
         Log.info("SCREENSHOT of the following test is taken: " + methodName);
         Log.info("----- ***** -----\n");
-        return ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+        return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
 }

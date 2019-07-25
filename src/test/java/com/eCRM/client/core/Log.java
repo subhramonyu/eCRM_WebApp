@@ -10,7 +10,7 @@ public class Log {
 		// Initialize Log4j logs
 	private static Logger Log;
 			public static Logger setLogger(String ClassName) {
-				PropertyConfigurator.configure(System.getProperty("user.dir")+"/properties/Log.properties");
+				PropertyConfigurator.configure(System.getProperty("user.dir")+"/PropertiesFiles/Log.properties");
 				return  Log = Logger.getLogger(ClassName.getClass());
 				
 			}

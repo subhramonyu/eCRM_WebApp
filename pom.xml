@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.efi.test</groupId>
@@ -30,9 +29,6 @@
 		<allure-maven-plugin.version>2.5</allure-maven-plugin.version>
 		<allure-testng-adaptor>1.5.2</allure-testng-adaptor>
 		<aspectjweaver>1.8.10</aspectjweaver>
-
-		<!-- Appium properties -->
-		<io.appium.client.version>6.0.0</io.appium.client.version>
 
 		<!-- Jira properties -->
 		<guava.version>23.0</guava.version>
@@ -73,12 +69,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.appium</groupId>
-			<artifactId>java-client</artifactId>
-			<version>${io.appium.client.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
 			<version>${selenium.version}</version>
@@ -113,9 +103,6 @@
 			<artifactId>testng</artifactId>
 			<version>${testng.version}</version>
 		</dependency>
-
-		<!-- <dependency> <groupId>com.qmetry</groupId> <artifactId>automation</artifactId> 
-			<version>1.0.0</version> </dependency> -->
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -173,6 +160,11 @@
 			<version>2.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>0.12</version>
+		</dependency>
 
 	</dependencies>
 
@@ -186,7 +178,7 @@
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/${desktop}.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/web.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
