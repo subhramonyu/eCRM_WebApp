@@ -4,16 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -21,15 +17,13 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.eCRM.client.pages.LogInPage;
-import com.google.j2objc.annotations.ReflectionSupport.Level;
-
-import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
 @SuppressWarnings("unused")
 public class DriverFactory {
 	public static  WebDriver driver;
 	private DesiredCapabilities capabilities;
 	private LogInPage login;
+	private Log log;
 	private ChromeOptions chromeOptions = new ChromeOptions();
 
 	@BeforeTest(groups = { Config.REGRESSION_TEST })
@@ -38,7 +32,7 @@ public class DriverFactory {
 	public void setUp(@Optional("null") String browserName, @Optional("null") String environmentName,
 			@Optional("null") String userName, @Optional("null") String password,
 			@Optional("true") Boolean isSignInRequired) throws Exception {
-
+			DriverManager.setLog(log);
 		try {
 			if (browserName.equals("ChromeHeadless")) {
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromedrivercanary");
@@ -85,7 +79,7 @@ public class DriverFactory {
 				firefoxProfile.setPreference("plugin.scan.plid.all", false);
 				firefoxProfile.setPreference("plugin.disable_full_page_plugin_for_types", "application/pdf");
 
-				JavaScriptError.addExtension(firefoxProfile);
+				//JavaScriptError.addExtension(firefoxProfile);
 				FirefoxOptions options = new FirefoxOptions();
 				options.setProfile(firefoxProfile);
 				driver = new FirefoxDriver(options);

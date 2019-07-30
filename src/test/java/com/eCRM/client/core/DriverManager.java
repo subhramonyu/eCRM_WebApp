@@ -11,6 +11,7 @@ public class DriverManager {
 	private static ThreadLocal<String> userName = new ThreadLocal<String>();
 	private static ThreadLocal<String> password = new ThreadLocal<String>();
 	private static ThreadLocal<LogInPage> signIn = new ThreadLocal<LogInPage>();
+	private static ThreadLocal<Log> log = new ThreadLocal<Log>();
 
 	public static WebDriver getDriver() {
 		return driver.get();
@@ -60,6 +61,14 @@ public class DriverManager {
 
 	public static void setPassword(String passwordValue) {
 		password.set(passwordValue);
+	}
+
+	public static ThreadLocal<Log> getLog() {
+		return log;
+	}
+
+	public static void setLog(Log logObject) {
+		log.set(logObject);
 	}
 
 	

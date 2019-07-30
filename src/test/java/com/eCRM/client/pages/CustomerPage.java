@@ -56,19 +56,18 @@ public class CustomerPage extends CommonUtils {
 
 	@FindBy(how = How.CSS, using = "select#ctl00_cphMain_cbxClassification")
 	private WebElement classificationDropDown;
-	
+
 	@FindBy(how = How.CSS, using = "img[alt='Edit Customer']")
 	private WebElement editBtn;
-	
-	@FindBy(how = How.CSS,using = "input#ctl00_cphMain_CustomerList1_grdCustomers_ctl00_ctl04_SelectColumnSelectCheckBox")
+
+	@FindBy(how = How.CSS, using = "input#ctl00_cphMain_CustomerList1_grdCustomers_ctl00_ctl04_SelectColumnSelectCheckBox")
 	private WebElement customerCheckBox;
-	
+
 	@FindBy(how = How.CSS, using = "img[alt='Delete the seleted Customer']")
 	private WebElement deleteBtn;
-	
+
 	@FindBy(how = How.CSS, using = "input#ctl00_cmdDelete")
 	private WebElement markInactive;
-	
 
 	public CustomerPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
@@ -77,16 +76,16 @@ public class CustomerPage extends CommonUtils {
 		Log.setLogger("CustomerPage");
 	}
 
-	public enum classificationType{
-		CUSTOMER,PROSPECT,COMPETITOR,SUPPLIER;
+	public enum classificationType {
+		CUSTOMER, PROSPECT, COMPETITOR, SUPPLIER;
 	}
-	
+
 	@Step("create a new {0} in eCRM")
 	public void create(classificationType aType) {
 		switchToDefaultContent();
 		landing.switchToBodyFrame();
 		click(customerNameField);
-		
+
 		switch (aType) {
 		case CUSTOMER:
 			selectFromDropdown(classificationDropDown, 1);
@@ -106,18 +105,11 @@ public class CustomerPage extends CommonUtils {
 		selectFromDropdown(salesPersonDropDown, 1);
 		click(saveBtn);
 	}
-	
-	
-	
+
 	@Step("validating the {0}")
 	public boolean isCreated(classificationType aType) {
 		boolean bValue = false;
-		switchToDefaultContent();
-		landing.switchToHeaderFrame();
-		click(quickSearch);
-		quickSearch.clear();
-		sendKeys(quickSearch, user.getFullName());
-		click(quickSearchBtn);
+		landing.search(user.getFullName());
 		switchToDefaultContent();
 		landing.switchToBodyFrame();
 		Assert.assertNotNull(customerName);
@@ -133,16 +125,10 @@ public class CustomerPage extends CommonUtils {
 		}
 		return bValue;
 	}
-	
-	
+
 	@Step("editing the name and postal code of a {0}")
 	public void edit(classificationType aType) {
-		switchToDefaultContent();
-		landing.switchToHeaderFrame();
-		click(quickSearch);
-		quickSearch.clear();
-		sendKeys(quickSearch, user.getFullName());
-		click(quickSearchBtn);
+		landing.search(user.getFullName());
 		switchToDefaultContent();
 		landing.switchToBodyFrame();
 		click(customerName);
@@ -152,17 +138,12 @@ public class CustomerPage extends CommonUtils {
 		postcodeField.clear();
 		sendKeys(postcodeField, user.getDetails(UserDetails.POSTCODE));
 		click(saveBtn);
-			
+
 	}
-	
+
 	@Step("Deleting the  {0}")
 	public void delete(classificationType aType) {
-		switchToDefaultContent();
-		landing.switchToHeaderFrame();
-		click(quickSearch);
-		quickSearch.clear();
-		sendKeys(quickSearch, user.getFullName());
-		click(quickSearchBtn);
+		landing.search(user.getFullName());
 		switchToDefaultContent();
 		landing.switchToBodyFrame();
 		click(customerCheckBox);
@@ -175,24 +156,20 @@ public class CustomerPage extends CommonUtils {
 	public boolean isDeleted(classificationType aType) {
 		boolean bValue = true;
 		try {
-			switchToDefaultContent();
-			landing.switchToHeaderFrame();
-			click(quickSearch);
-			quickSearch.clear();
-			sendKeys(quickSearch, user.getFullName());
-			click(quickSearchBtn);
+			landing.search(user.getFullName());
 			switchToDefaultContent();
 			landing.switchToBodyFrame();
-			getElement(LocatorStrategy.WEB_LOCATOR_STRATEGY_CSS, "a#ctl00_cphMain_CustomerList1_grdCustomers_ctl00_ctl04_lnkCompany");
+			getElement(LocatorStrategy.WEB_LOCATOR_STRATEGY_CSS,
+					"a#ctl00_cphMain_CustomerList1_grdCustomers_ctl00_ctl04_lnkCompany");
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			bValue = false;
 			throw new Exception("Element is not present");
 		}
 		return bValue;
-		
+
 	}
-	
+
 	@Step("checking for the customer name is displayed")
 	public boolean isCustomerNameisDisplayed() {
 		if (customerName.getText().contentEquals(user.getFullName())) {
