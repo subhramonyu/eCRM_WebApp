@@ -24,31 +24,27 @@ public class UserProfile extends CommonUtils {
 		case FULLNAME:
 			setFullName(random.name().fullName());
 			value = getFullName();
-
 			break;
 		case FIRST_NAME:
-			if (fullName.equals(null)) {
-				setFullName(random.name().fullName());
-			} else {
-				nameHolder = split(getFullName(), " ");
-				value = nameHolder[0];
-			}
+			setFirstName(random.name().firstName());
+			value = getFirstName();
+			break;
 		case LAST_NAME:
-			if (fullName.equals(null)) {
-				setFullName(random.name().fullName());
-			} else {
-				nameHolder = split(getFullName(), " ");
-				value = nameHolder[1];
-			}
+			setLastName(random.name().lastName());
+			value = getLastName();
+			break;
 		case ADDRESS:
 			setAddress(random.address().streetAddress());
 			value = getAddress();
+			break;
 		case CITY:
 			setCity(random.address().cityName());
 			value = getCity();
+			break;
 		case POSTCODE:
 			setPostalCode(random.address().zipCode());
 			value = getPostalCode();
+			break;
 
 		default:
 			break;

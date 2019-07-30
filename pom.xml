@@ -18,10 +18,10 @@
 		<selenium.version>3.14.0</selenium.version>
 
 		<!-- TestNg properties -->
-		<testng.version>6.9.13.6</testng.version>
+		<testng.version>7.0.0-beta3</testng.version>
 
 		<!-- Maven properties -->
-		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 
@@ -142,12 +142,12 @@
 			<version>1.0.0</version>
 		</dependency>
 
-		<dependency>
+		<!--  <dependency>
 			<groupId>com.liferay</groupId>
 			<artifactId>net.jsourcerer.webdriver.JSErrorCollector</artifactId>
 			<version>0.6</version>
 		</dependency>
-
+		-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -178,10 +178,10 @@
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/web.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver}/aspectjweaver-${aspectjweaver}.jar"
 					</argLine>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>

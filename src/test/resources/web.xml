@@ -2,21 +2,21 @@
 
 <suite name="eCRM TEST SUITE">
 
-	<test name="Regression Tests">
+	<test name="Regression Tests" verbose="1">
 
 		<parameter name="browserName" value="Chrome" />
 		<parameter name="environmentName" value="PreProduction" />
-		<parameter name="userName" value="vc" />
-		<parameter name="password" value="a" />
+		<parameter name="userName" value="demo" />
+		<parameter name="password" value="demo" />
 		<groups>
 			<run>
 				<include name="regression_test" />
 			</run>
 		</groups>
-
 		<packages>
 			<package name="com.eCRM.client.*" />
 		</packages>
+
 
 	</test>
 

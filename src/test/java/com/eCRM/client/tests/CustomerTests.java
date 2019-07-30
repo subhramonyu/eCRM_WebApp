@@ -1,7 +1,5 @@
 package com.eCRM.client.tests;
 
-import javax.xml.ws.FaultAction;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -10,18 +8,15 @@ import com.eCRM.client.core.Config;
 import com.eCRM.client.pages.CustomerPage;
 import com.eCRM.client.pages.CustomerPage.classificationType;
 import com.eCRM.client.pages.LandingPage;
-import com.eCRM.client.pages.LogInPage;
 
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
-import ru.yandex.qatools.allure.annotations.Issue;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
-import ru.yandex.qatools.allure.annotations.Title;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
-public class CustomerTest {
+public class CustomerTests {
 	private LandingPage landing;
 	private CustomerPage customer;
 
