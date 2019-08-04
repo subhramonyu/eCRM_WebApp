@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Properties;
 
 import org.apache.commons.configuration2.Configuration;
@@ -15,9 +17,14 @@ import org.apache.commons.configuration2.FileBasedConfiguration;
 import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
+import org.bridj.cpp.std.list;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
-public class FileUtil 
-{
+import com.eCRM.performance.NavigationTiming;
+import com.eCRM.performance.PerformanceEvent;
+
+public class FileUtil {
 	private static Properties properties = new Properties();
 	private static OutputStream outputStream;
 	private static InputStream inputStream;
@@ -27,26 +34,24 @@ public class FileUtil
 	private static Parameters parameters;
 	private static FileBasedConfigurationBuilder<FileBasedConfiguration> builder;
 	private static Configuration configuration;
+	private static JSONObject jsonObject;
+	private static JSONArray jsonList;
 
-	public static void writeToPropertyFile(String propertyFilePath, String propertyName, String propertyValue)
-	{
-		try
-		{
+	public static void writeToPropertyFile(String propertyFilePath, String propertyName, String propertyValue) {
+		try {
 			outputStream = new FileOutputStream(propertyFilePath);
 			properties.setProperty(propertyName, propertyValue);
 			properties.store(outputStream, null);
 			outputStream.close();
-		} 
-		catch (IOException io)
-		{
+			jsonObject = new JSONObject();
+			jsonList = new JSONArray();
+		} catch (IOException io) {
 			io.printStackTrace();
 		}
 	}
 
-	public static void updatePropertyFile(String propertyFilePath, String propertyName, String propertyValue)
-	{
-		try
-		{
+	public static void updatePropertyFile(String propertyFilePath, String propertyName, String propertyValue) {
+		try {
 			inputStream = new FileInputStream(propertyFilePath);
 			properties.load(inputStream);
 			inputStream.close();
@@ -54,15 +59,12 @@ public class FileUtil
 			properties.setProperty(propertyName, propertyValue);
 			properties.store(outputStream, null);
 			outputStream.close();
-		} 
-		catch (IOException io)
-		{
+		} catch (IOException io) {
 			io.printStackTrace();
 		}
 	}
 
-	public static String readFromPropertyFile(String propertyFilePath, String propertyName)
-	{
+	public static String readFromPropertyFile(String propertyFilePath, String propertyName) {
 		try {
 			properties.load(new FileInputStream(propertyFilePath));
 			return properties.getProperty(propertyName) != null ? properties.getProperty(propertyName).trim()
@@ -72,73 +74,86 @@ public class FileUtil
 		}
 		return null;
 	}
-	
 
-	public static void writeOnFile(String filePath, int startCount, int endCount, String data)
-	{
+	public static void writeOnFile(String filePath, int startCount, int endCount, String data) {
 		file = new File(filePath);
-		try
-		{
+		try {
 			fileWriter = new FileWriter(file);
 			bufferedWriter = new BufferedWriter(fileWriter);
-			for(int i = startCount; i<endCount; i++)
-			{
-				bufferedWriter.write(data+" "+i+System.getProperty("line.separator"));
+			for (int i = startCount; i < endCount; i++) {
+				bufferedWriter.write(data + " " + i + System.getProperty("line.separator"));
 			}
-		} 
-		catch (IOException e) 
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			try 
-			{
+		} finally {
+			try {
 				bufferedWriter.close();
 				fileWriter.close();
-			} 
-			catch (IOException e) 
-			{
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
-	public static void initPropertiesFile(String fileName)
-	{
-		try
-		{
+
+	public static void initPropertiesFile(String fileName) {
+		try {
 			parameters = new Parameters();
 			builder = new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
-					.configure(parameters.properties()
-			        .setFileName(fileName));
+					.configure(parameters.properties().setFileName(fileName));
 			configuration = builder.getConfiguration();
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public static String readProperty(String fileName, String propertyName)
-	{
+
+	public static String readProperty(String fileName, String propertyName) {
 		initPropertiesFile(fileName);
 		return configuration.getString(propertyName);
 	}
-	
-	public static void writeProperty(String fileName, String propertyName, String propertyValue)
-	{
-		try
-		{
+
+	public static void writeProperty(String fileName, String propertyName, String propertyValue) {
+		try {
 			initPropertiesFile(fileName);
 			configuration.setProperty(propertyName, propertyValue);
 			builder.save();
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	public static void writePerformanceAttributeToJSON(String EventName, String JSONfilePath) {
+		HashMap<String, Long> performanceMatrix = NavigationTiming.loadData();
+		for (String eventName : performanceMatrix.keySet()) {
+			JSONObject JObject = new JSONObject();
+			JObject.put(eventName, performanceMatrix.get(eventName));
+			jsonList.add(JObject);
+		}
+
+		jsonObject.put(EventName, jsonList);
+
+		try {
+			String jsoncontent = jsonObject.toJSONString();
+
+			File file = new File(JSONfilePath);
+
+			if (!(file.exists())) {
+				file.createNewFile();
+			}
+			FileWriter writer = new FileWriter(file);
+			PrintWriter printer = new PrintWriter(writer);
+			if (file.exists() && file.isFile()) {
+				printer.println(jsoncontent);
+				printer.flush();
+				writer.flush();
+				printer.close();
+				writer.close();
+			} else {
+				System.out.println("Please provide a valid path to desitnation Jsonfile");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
 }

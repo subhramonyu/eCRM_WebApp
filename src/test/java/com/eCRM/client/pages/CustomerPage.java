@@ -128,9 +128,6 @@ public class CustomerPage extends CommonUtils {
 
 	@Step("editing the name and postal code of a {0}")
 	public void edit(classificationType aType) {
-		landing.search(user.getFullName());
-		switchToDefaultContent();
-		landing.switchToBodyFrame();
 		click(customerName);
 		click(editBtn);
 		customerNameField.clear();
@@ -143,9 +140,6 @@ public class CustomerPage extends CommonUtils {
 
 	@Step("Deleting the  {0}")
 	public void delete(classificationType aType) {
-		landing.search(user.getFullName());
-		switchToDefaultContent();
-		landing.switchToBodyFrame();
 		click(customerCheckBox);
 		click(deleteBtn);
 		DriverManager.getDriver().switchTo().frame("Standard");

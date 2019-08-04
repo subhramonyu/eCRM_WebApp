@@ -13,7 +13,7 @@ public class LogInTests {
 
 	@BeforeClass(groups = {})
 	public void initClass() {
-		login = new LogInPage();
+		//login = new LogInPage();
 	}
 
 	

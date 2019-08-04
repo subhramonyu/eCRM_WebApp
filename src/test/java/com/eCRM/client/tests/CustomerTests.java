@@ -44,7 +44,7 @@ public class CustomerTests {
 	@Features("Module - Customer Mgmt(New Customer)")
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1384")
-	@Test(groups = { Config.REGRESSION_TEST }, priority = 1002)
+	@Test(groups = { Config.REGRESSION_TEST }, priority = 1002,dependsOnMethods = "addNewCustomerInCRM")
 	@Description("New customer should get added")
 	public void validateTheNewCustomerIsCreated() {
 		Assert.assertTrue(customer.isCreated(classificationType.CUSTOMER));
@@ -56,7 +56,7 @@ public class CustomerTests {
 	@Features("Module - Customer Mgmt(New Customer)")
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1384")
-	@Test(groups = { Config.REGRESSION_TEST }, priority = 1003)
+	@Test(groups = { Config.REGRESSION_TEST }, priority = 1003,dependsOnMethods = "validateTheNewCustomerIsCreated")
 	@Description("Modify the customer in eCRM.")
 	public void editNewCustomerinCRM() {
 		customer.edit(classificationType.CUSTOMER);
@@ -80,7 +80,7 @@ public class CustomerTests {
 	@Features("Module - Customer Mgmt(New Customer)")
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1384")
-	@Test(groups = { Config.REGRESSION_TEST }, priority = 1005)
+	@Test(groups = { Config.REGRESSION_TEST }, priority = 1005,dependsOnMethods="verifyTheEditedCustomerIsReflected")
 	@Description("delete the customer in eCRM.")
 	public void deleteCustomer() {
 		customer.delete(classificationType.CUSTOMER);

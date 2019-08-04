@@ -6,32 +6,47 @@ import com.github.javafaker.Faker;
 
 public class UserProfile extends CommonUtils {
 	static Faker random;
-	private  static String fullName = null;
-	private static  String firstName = null;
-	private static  String lastName = null;
-	private static  String address;
-	private static  String city;
-	private static  String postalCode;
-	private static  String[] nameHolder;
-	private static  String value = null;
+	private static String fullName;
+	private static String firstName = null;
+	private static String lastName = null;
+	private static String address;
+	private static String city;
+	private static String postalCode;
+	private static String[] nameHolder;
+	private static String value = null;
 
 	public UserProfile() {
-	random = new Faker();
+		random = new Faker();
+		fullName = null;
 	}
 
-	public  String getDetails(UserDetails aProfile) {
+	public String getDetails(UserDetails aProfile) {
 		switch (aProfile) {
 		case FULLNAME:
 			setFullName(random.name().fullName());
 			value = getFullName();
 			break;
 		case FIRST_NAME:
-			setFirstName(random.name().firstName());
-			value = getFirstName();
+			if (fullName != null) {
+				nameHolder = split(fullName, " ");
+				value = nameHolder[0];
+				setFirstName(value);
+			} else {
+				setFirstName(random.name().firstName());
+				value = getFirstName();
+			}
+
 			break;
 		case LAST_NAME:
-			setLastName(random.name().lastName());
-			value = getLastName();
+			if (fullName != null) {
+				nameHolder = split(fullName, " ");
+				value = nameHolder[1];
+				setFirstName(value);
+			} else {
+				setLastName(random.name().lastName());
+				value = getLastName();
+			}
+
 			break;
 		case ADDRESS:
 			setAddress(random.address().streetAddress());

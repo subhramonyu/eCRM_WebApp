@@ -1,8 +1,11 @@
 package com.eCRM.client.core;
 
+
+import java.sql.Driver;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,29 +13,41 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.eCRM.client.pages.LogInPage;
+import com.eCRM.performance.EventListnerUtils;
 
 @SuppressWarnings("unused")
 public class DriverFactory {
-	public static  WebDriver driver;
-	private DesiredCapabilities capabilities;
+	public static  WebDriver webdriver;
+	public static EventFiringWebDriver driver ;
+	public static EventListnerUtils eventlistner;
+	
+	
+	private DesiredCapabilities capabilities = new DesiredCapabilities();
 	private LogInPage login;
 	private Log log;
 	private ChromeOptions chromeOptions = new ChromeOptions();
+	
 
 	@BeforeTest(groups = { Config.REGRESSION_TEST })
-
+	
 	@Parameters({ "browserName", "environmentName", "userName", "password", "isSignInRequired" })
 	public void setUp(@Optional("null") String browserName, @Optional("null") String environmentName,
 			@Optional("null") String userName, @Optional("null") String password,
 			@Optional("true") Boolean isSignInRequired) throws Exception {
 			DriverManager.setLog(log);
+			eventlistner = new EventListnerUtils();
 		try {
 			if (browserName.equals("ChromeHeadless")) {
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromedrivercanary");
@@ -40,30 +55,29 @@ public class DriverFactory {
 				chromeOptions.addArguments("--headless");
 				chromeOptions.addArguments("--disable-gpu");
 				chromeOptions.addArguments("window-size=2560x1600");
-				driver = new ChromeDriver(chromeOptions);
-				DriverManager.setDriver(driver);
+				webdriver = new ChromeDriver(chromeOptions);
 				DriverManager.setBrowserName("ChromeHeadless");
 			}
 
 			else if (browserName.equals("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", Config.DRIVER_PATH + "/chromedriver.exe");
 
-				// loggingprefs = new LoggingPreferences();
-				// loggingprefs.enable("browser", Level.NATIVE_ONLY);
-				// capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
+				LoggingPreferences loggingprefs = new LoggingPreferences();
+				loggingprefs.enable(LogType.BROWSER, Level.INFO);
+				loggingprefs.enable(LogType.PERFORMANCE, Level.INFO);
+				capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
 
 				ChromeOptions chromeOptions = new ChromeOptions();
 				Map<String, Object> prefs = new HashMap<String, Object>();
 				prefs.put("download.default_directory", Config.DEFAULT_DOWNLOAD_PATH);
 				prefs.put("download.prompt_for_download", false);
-				//chromeOptions.setExperimentalOption("prefs", prefs);
+				// chromeOptions.setExperimentalOption("prefs", prefs);
 				chromeOptions.addArguments("--disable-pdf-material-ui");
 				chromeOptions.addArguments("--disable-out-of-process-pdf");
 				chromeOptions.addArguments("--start-maximized");
-				// capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
-				driver = new ChromeDriver(chromeOptions);
-				DriverManager.setDriver(driver);
+				webdriver = new ChromeDriver(chromeOptions);
 				DriverManager.setBrowserName(Config.CHROME_DRIVER);
 
 			} else if (browserName.equals("Firefox")) {
@@ -82,12 +96,12 @@ public class DriverFactory {
 				//JavaScriptError.addExtension(firefoxProfile);
 				FirefoxOptions options = new FirefoxOptions();
 				options.setProfile(firefoxProfile);
-				driver = new FirefoxDriver(options);
-				driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
-				DriverManager.setDriver(driver);
+				webdriver = new FirefoxDriver(options);
 				DriverManager.setBrowserName(Config.FIREFOX_DRIVER);
 			}
-		
+			driver = new EventFiringWebDriver(webdriver);
+			DriverManager.setDriver(driver);
+			driver.register(eventlistner);
 			driver.get(FileUtil.readFromPropertyFile(Config.Env_Property, "BASEURL"));
 			DriverManager.setBrowserName(browserName);
 			DriverManager.setUserName(userName);
@@ -95,7 +109,7 @@ public class DriverFactory {
 			//Ensure to load the page
 			CommonUtils.wait(5);
 			
-			login = new LogInPage();
+			login = new LogInPage(driver);
 			login.login();
 			
 		} catch (
