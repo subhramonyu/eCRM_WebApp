@@ -1,6 +1,7 @@
 package com.eCRM.client.core;
 
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
@@ -40,8 +41,7 @@ public class CommonUtils {
 		javaScriptExecutor = (JavascriptExecutor) DriverManager.getDriver();
 	}
 
-	// ************************* Actions and Events methods
-	// **********************************
+	// ***************** Actions and Events methods *******************
 
 	@Step("Moving to Element : {0}")
 	public static void moveToElement(WebElement element) {
@@ -124,8 +124,7 @@ public class CommonUtils {
 		CommonUtils.wait(2);
 	}
 
-	// *************************************** Find ELEMENT METHODS
-	// *************************************************
+	// **************************** Find ELEMENT METHODS ******************
 
 	@Step("Getting the webElement : {1}")
 	public static WebElement getElement(LocatorStrategy webLocatorStrategy, String webAttributeValue) {
@@ -209,8 +208,7 @@ public class CommonUtils {
 
 	}
 
-	// *************************************** IS DISPLAYED / ENABLED METHODS
-	// *************************************************
+	// **************** IS DISPLAYED / ENABLED METHODS *************************
 
 	@Step("Is element is Displayed : {2}")
 	public static boolean isDisplayed(int timeoutInSeconds, int pollingTimeInSeconds, WebElement aNelement) {
@@ -254,8 +252,7 @@ public class CommonUtils {
 		}
 	}
 
-	// *************************************** CLICK METHODS
-	// ********************************************************
+	// ****************** CLICK METHODS ****************************
 
 	@Step("Clicking on the WebElement : {0}")
 	public static void click(WebElement element) {
@@ -308,8 +305,19 @@ public class CommonUtils {
 		aSelect.selectByIndex(indexToBeSelected);
 	}
 
-	// *************************************** SEND KEYS METHODS
-	// *************************************************
+	public static void clickEnterKey() {
+		try {
+			robot = new Robot();
+			CommonUtils.wait(1);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			CommonUtils.wait(1);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	}
+
+	// ************** SEND KEYS METHODS **************************
 
 	@Step("Sending Text : {1} to element : {0}")
 	public static void sendKeys(WebElement element, String textToBeTyped) {
@@ -422,6 +430,11 @@ public class CommonUtils {
 	@Step("get the current Frame")
 	public Object getCurrentFrame() {
 		return javaScriptExecutor.executeScript("return self.name");
+	}
+	
+	@Step("execute JacScript")
+	public  static Object jsExeCute(String script) {
+		return javaScriptExecutor.executeScript(script);
 	}
 
 }

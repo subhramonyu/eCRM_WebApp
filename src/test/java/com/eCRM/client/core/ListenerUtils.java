@@ -10,6 +10,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class ListenerUtils extends TestListenerAdapter {
+	
 
 	public void onTestStart(ITestResult result) {
 
