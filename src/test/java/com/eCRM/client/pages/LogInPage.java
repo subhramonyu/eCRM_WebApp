@@ -26,16 +26,15 @@ public class LogInPage extends CommonUtils {
 
 	private WebDriver driver;
 
-	public LogInPage(WebDriver driver) {
-		//PageFactory.initElements(DriverManager.getDriver(), this);
-		this.driver = driver; 
-		PageFactory.initElements(driver, this);
+	public LogInPage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
+		//this.driver = driver; 
+		//PageFactory.initElements(driver, this);
 		Log.setLogger("LogInPage");
 	}
 
 	@Step("Login to the Application")
 	public void login() {
-		System.out.println(DriverManager.getDriver());
 		//loginId.clear();
 		//password.clear();
 		sendKeys(loginId, DriverManager.getUserName());

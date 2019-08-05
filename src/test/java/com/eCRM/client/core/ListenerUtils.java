@@ -11,6 +11,10 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class ListenerUtils extends TestListenerAdapter {
 	
+	public ListenerUtils() {
+		Log.setLogger("ListenerUtils");
+	}
+	
 
 	public void onTestStart(ITestResult result) {
 

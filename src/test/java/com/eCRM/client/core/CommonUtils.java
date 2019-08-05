@@ -432,7 +432,7 @@ public class CommonUtils {
 		return javaScriptExecutor.executeScript("return self.name");
 	}
 	
-	@Step("execute JacScript")
+	@Step("execute JavaScript")
 	public  static Object jsExeCute(String script) {
 		return javaScriptExecutor.executeScript(script);
 	}

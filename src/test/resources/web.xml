@@ -5,6 +5,7 @@
 
 		<parameter name="browserName" value="Chrome" />
 		<parameter name="environmentName" value="PreProduction" />
+		<parameter name="performanceFlag" value="false" />
 		<parameter name="userName" value="demo" />
 		<parameter name="password" value="demo" />
 		<groups>

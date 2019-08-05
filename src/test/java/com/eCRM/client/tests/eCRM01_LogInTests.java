@@ -8,16 +8,16 @@ import com.eCRM.client.pages.LogInPage;
 
 import ru.yandex.qatools.allure.annotations.Description;
 
-public class LogInTests {
+public class eCRM01_LogInTests {
 	private LogInPage login;
 
-	@BeforeClass(groups = {})
+	@BeforeClass(groups = {Config.REGRESSION_TEST})
 	public void initClass() {
-		//login = new LogInPage();
+		login = new LogInPage();
 	}
 
 	
-	@Test(groups= {})
+	@Test(groups= {Config.REGRESSION_TEST},priority = 0001)
 	@Description("Login to the Application using existing UserId and Password")
 	public void loginTest() throws Exception {
 			login.login();

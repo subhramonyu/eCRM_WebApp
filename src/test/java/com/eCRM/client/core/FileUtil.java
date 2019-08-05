@@ -17,12 +17,10 @@ import org.apache.commons.configuration2.FileBasedConfiguration;
 import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
-import org.bridj.cpp.std.list;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.eCRM.performance.NavigationTiming;
-import com.eCRM.performance.PerformanceEvent;
+import com.eCRM.client.performance.NavigationTiming;
 
 public class FileUtil {
 	private static Properties properties = new Properties();
@@ -123,12 +121,13 @@ public class FileUtil {
 
 	public static void writePerformanceAttributeToJSON(String EventName, String JSONfilePath) {
 		HashMap<String, Long> performanceMatrix = NavigationTiming.loadData();
+		jsonList = new JSONArray();
 		for (String eventName : performanceMatrix.keySet()) {
 			JSONObject JObject = new JSONObject();
 			JObject.put(eventName, performanceMatrix.get(eventName));
 			jsonList.add(JObject);
 		}
-
+		jsonObject =  new JSONObject();
 		jsonObject.put(EventName, jsonList);
 
 		try {
@@ -139,7 +138,7 @@ public class FileUtil {
 			if (!(file.exists())) {
 				file.createNewFile();
 			}
-			FileWriter writer = new FileWriter(file);
+			FileWriter writer = new FileWriter(file, true);
 			PrintWriter printer = new PrintWriter(writer);
 			if (file.exists() && file.isFile()) {
 				printer.println(jsoncontent);
