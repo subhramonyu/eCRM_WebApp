@@ -17,7 +17,7 @@ import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
-public class ContactTests {
+public class eCRM03_ContactTests {
 	private LandingPage landing;
 	private ContactPage contact;
 	private String valueHolder;

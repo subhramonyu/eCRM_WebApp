@@ -1,4 +1,4 @@
-package com.eCRM.performance;
+package com.eCRM.client.performance;
 
 public enum EventAttribute {
 		
@@ -16,10 +16,11 @@ public enum EventAttribute {
 		RESPONSE_START("responseStart"),
 		
 		
-		PAGE_LOAD_TIME("pageLoadTime"),
-		NETWORK_CONNECTION_TIME("networkConeectionTime"),
-		SERVER_RESPONSE_TIME("serverResponseTime"),
-		DOM_LOAD_TIME("DOmLoadTime");
+		PAGE_LOAD_TIME("PageLoadTime"),
+		PAGE_RENDER_TIME("PageRenderTime"),
+		NETWORK_CONNECTION_TIME("ConnectTime"),
+		SERVER_RESPONSE_TIME("ServerResponseTime");
+		
 	
 	EventAttribute(String attributeValue) {
         this.attributeValue = attributeValue;

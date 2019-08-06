@@ -11,4 +11,6 @@ public class testClass {
 		//capitalCities.put("USA", "Washington DC");
 		System.out.println(capitalCities);
 	}
+	
+	//long a = 24124124.22523523533;
 }

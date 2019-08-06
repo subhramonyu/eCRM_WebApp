@@ -41,7 +41,7 @@ public class Config
 	public final static String DRIVER_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/drivers";
 	public final static String DEFAULT_DOWNLOAD_PATH = CommonUtils.getUserCurrentDirectoryPath()+"/Downloads";
 	public final static String Env_Property = CommonUtils.getUserCurrentDirectoryPath()+"/PropertiesFiles/Environment.properties";
-	public final static String Performance_JsonFile = CommonUtils.getUserCurrentDirectoryPath()+"files/performanceMatric.json";
+	public final static String Performance_JsonFile = CommonUtils.getUserCurrentDirectoryPath()+"/files/performanceMatric.json";
 	
 	public enum LocatorStrategy
 	{

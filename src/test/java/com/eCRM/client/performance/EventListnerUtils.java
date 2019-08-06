@@ -1,4 +1,4 @@
-package com.eCRM.performance;
+package com.eCRM.client.performance;
 
 import org.omg.CORBA.ARG_OUT;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import com.eCRM.client.core.Config;
 import com.eCRM.client.core.DriverFactory;
 import com.eCRM.client.core.FileUtil;
 
-public class EventListnerUtils extends NavigationTiming implements WebDriverEventListener {
+public class EventListnerUtils  implements WebDriverEventListener {
 
 	@Override
 	public void beforeAlertAccept(WebDriver driver) {
@@ -47,9 +47,9 @@ public class EventListnerUtils extends NavigationTiming implements WebDriverEven
 	@Override
 	public void afterNavigateTo(String url, WebDriver driver) {
 		// TODO Auto-generated method stub
-		
+	
+		FileUtil.writePerformanceAttributeToJSON("Navigating to "+url.toString().trim(),Config.Performance_JsonFile);
 	}
-
 	@Override
 	public void beforeNavigateBack(WebDriver driver) {
 		// TODO Auto-generated method stub
@@ -101,15 +101,13 @@ public class EventListnerUtils extends NavigationTiming implements WebDriverEven
 	@Override
 	public void beforeClickOn(WebElement element, WebDriver driver) {
 			// TODO Auto-generated method stub
-			System.out.println("inside method afterClickOn on " + element.toString());
-			FileUtil.writePerformanceAttributeToJSON(element.toString(),Config.Performance_JsonFile);
 		
 	}
 
 	@Override
 	public void afterClickOn(WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		
+		FileUtil.writePerformanceAttributeToJSON(element.toString().split(": ")[2],Config.Performance_JsonFile);
 	}
 
 	@Override
