@@ -12,7 +12,7 @@ import com.eCRM.client.core.Log;
 
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class LandingPage extends CommonUtils {
+public class HomePage extends CommonUtils {
 
 	@FindBy(how = How.CSS, using = "frame[name =header]")
 	private WebElement headerFrame;
@@ -35,7 +35,7 @@ public class LandingPage extends CommonUtils {
 	@FindBy(how = How.CSS, using = "a#aContact")
 	private WebElement newContactLink;
 
-	public LandingPage() {
+	public HomePage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
 		Log.setLogger("LandingPage");
 

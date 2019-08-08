@@ -21,7 +21,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class CustomerPage extends CommonUtils {
 
-	private LandingPage landing;
+	private HomePage landing;
 	private UserProfile user;
 
 	@FindBy(how = How.CSS, using = "input#ctl00_cphMain_txtCompanyName")
@@ -71,7 +71,7 @@ public class CustomerPage extends CommonUtils {
 
 	public CustomerPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
-		landing = new LandingPage();
+		landing = new HomePage();
 		user = new UserProfile();
 		Log.setLogger("CustomerPage");
 	}

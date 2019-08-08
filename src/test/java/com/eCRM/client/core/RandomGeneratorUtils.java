@@ -23,14 +23,14 @@ public class RandomGeneratorUtils
 		return randomValueHolder.toString();
 	}
 
-	public static String generateRandomEmail()
+	public static String generateRandomUserId()
 	{
-		return "Newuser"+ getRandomString(userName, 15) + "@yopmail.com";
+		return "Newuser"+ getRandomString(userName, 6) ;
 	}
 	
 	public static String generateRandomPassword()
 	{
-		return getRandomString(password, 15);
+		return getRandomString(password, 6);
 	}
 	
 }

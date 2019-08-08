@@ -1,9 +1,6 @@
 package com.eCRM.client.core;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
-import com.eCRM.client.pages.LogInPage;
 
 public class DriverManager {
 	private static ThreadLocal<EventFiringWebDriver> driver = new ThreadLocal<EventFiringWebDriver>();
@@ -20,7 +17,6 @@ public class DriverManager {
 	public static void setDriver(EventFiringWebDriver webdriver) {
 		driver.set(webdriver);
 	}
-
 
 	public static String getBrowserName() {
 		return browserName.get();
@@ -62,8 +58,4 @@ public class DriverManager {
 		log.set(logObject);
 	}
 
-
-
-
-	
 }

@@ -230,7 +230,7 @@
 					<resultsDirectory>allure-results</resultsDirectory>
 					<reportDirectory>${project.build.directory}/graph-test-report</reportDirectory>
 					<properties>
-						<allure.tests.management.pattern>https://elektra.atlassian.net/browse/%s
+						<allure.tests.management.pattern>https://jira.efi.com/browse/%s
 						</allure.tests.management.pattern>
 					</properties>
 				</configuration>

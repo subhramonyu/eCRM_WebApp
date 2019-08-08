@@ -1,7 +1,13 @@
 package com.eCRM.client.config;
 
+import java.lang.reflect.Method;
+
+import org.testng.annotations.DataProvider;
+
 import com.eCRM.client.core.CommonUtils;
 import com.eCRM.client.core.Config.UserDetails;
+import com.eCRM.client.core.DriverManager;
+import com.eCRM.client.core.RandomGeneratorUtils;
 import com.github.javafaker.Faker;
 
 public class UserProfile extends CommonUtils {
@@ -20,6 +26,24 @@ public class UserProfile extends CommonUtils {
 		fullName = null;
 	}
 
+	
+	
+	@DataProvider(name = "RegressionCredentials")
+	public Object[][] getUserCredentials(Method m) {
+		if (m.getName().equalsIgnoreCase("loginwithInvalidCredentialsTest")) {
+			
+			return new Object[][] { 
+				{ RandomGeneratorUtils.generateRandomUserId(), RandomGeneratorUtils.generateRandomPassword()}, 
+				{ DriverManager.getUserName(), RandomGeneratorUtils.generateRandomPassword() }, 
+				{ RandomGeneratorUtils.generateRandomUserId(), DriverManager.getUserName() } };
+			
+		} else {
+			
+			return new Object[][] { { DriverManager.getUserName(), DriverManager.getPassword() } };
+		}
+	}
+	
+	
 	public String getDetails(UserDetails aProfile) {
 		switch (aProfile) {
 		case FULLNAME:

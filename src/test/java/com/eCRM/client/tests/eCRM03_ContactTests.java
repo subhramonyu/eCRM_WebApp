@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 import com.eCRM.client.core.CommonUtils;
 import com.eCRM.client.core.Config;
 import com.eCRM.client.pages.ContactPage;
-import com.eCRM.client.pages.LandingPage;
-import com.eCRM.client.pages.LogInPage;
+import com.eCRM.client.pages.HomePage;
 
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
@@ -17,35 +16,35 @@ import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
+
+@Stories("eCRM-Specific")
+@Features("Module - Customer Mgmt(New Contact)")
 public class eCRM03_ContactTests {
-	private LandingPage landing;
+	private HomePage landing;
 	private ContactPage contact;
 	private String valueHolder;
 
 	@BeforeClass(groups = { Config.REGRESSION_TEST })
 	public void initClass() {
-		landing = new LandingPage();
+		landing = new HomePage();
 		contact = new ContactPage();
 		valueHolder = null;
 	}
 
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2001, groups = { Config.REGRESSION_TEST })
 	@Description("Add new contact for the customer in the eCRM")
 	public void addNewContactTest() throws Exception {
-
-		
 		CommonUtils.wait(2);// ensure to load the page
 		landing.clickOnContactLink();
-
 		valueHolder = contact.createNewContacts();
 	}
 
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2002, groups = { Config.REGRESSION_TEST },dependsOnMethods = "addNewContactTest")
@@ -54,8 +53,8 @@ public class eCRM03_ContactTests {
 		Assert.assertTrue(contact.isContactCreated());
 	}
 
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2003, groups = { Config.REGRESSION_TEST },dependsOnMethods = "addNewContactTest")
@@ -64,8 +63,8 @@ public class eCRM03_ContactTests {
 		Assert.assertTrue(contact.isContactVisibleToCustomer(valueHolder));
 	}
 
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2004, groups = { Config.REGRESSION_TEST },dependsOnMethods = "addNewContactTest")
@@ -77,8 +76,7 @@ public class eCRM03_ContactTests {
 	}
 	
 	
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2005, groups = { Config.REGRESSION_TEST },dependsOnMethods = "addMultipleContact")
@@ -88,8 +86,7 @@ public class eCRM03_ContactTests {
 	}
 	
 	
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2006, groups = { Config.REGRESSION_TEST },dependsOnMethods = "verifyMultipleContactCreated")
@@ -98,8 +95,8 @@ public class eCRM03_ContactTests {
 		contact.isMultipleContactAddedToCustomer(valueHolder);
 	}
 	
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2007, groups = { Config.REGRESSION_TEST },dependsOnMethods = "verifyMultipleContactCreated")
@@ -108,8 +105,8 @@ public class eCRM03_ContactTests {
 		contact.editContact();
 	}
 	
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2008, groups = { Config.REGRESSION_TEST },dependsOnMethods = "editContact")
@@ -118,8 +115,8 @@ public class eCRM03_ContactTests {
 		Assert.assertTrue(contact.isContactEdited());
 	}
 	
-	@Stories("eCRM-Specific")
-	@Features("Module - Customer Mgmt(New Contact)")
+	
+	
 	@Severity(SeverityLevel.CRITICAL)
 	@TestCaseId("EFISWCRM-1383")
 	@Test(priority = 2009, groups = { Config.REGRESSION_TEST },dependsOnMethods="verifyContactIsEdited")
